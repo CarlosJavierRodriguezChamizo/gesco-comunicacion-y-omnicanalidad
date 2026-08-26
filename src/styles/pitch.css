@@ -1,0 +1,85 @@
+/* =========================================================================
+   pitch.css — Mandatos, temporizador proyectable y scoring del Comité.
+   ========================================================================= */
+
+/* ------------------------------------------------------------ Mandatos */
+.mandatos { display: grid; gap: var(--sp-4); grid-template-columns: 1fr; }
+@media (min-width: 760px)  { .mandatos { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1200px) { .mandatos { grid-template-columns: repeat(3, 1fr); } }
+
+.mandato {
+  border: 1px solid var(--c-line); border-top: 6px solid var(--c-accent-blue);
+  border-radius: var(--radius); padding: var(--sp-5); display: grid; gap: var(--sp-3);
+  transition: box-shadow .15s, transform .15s;
+}
+.mandato[data-activo="si"] { box-shadow: 0 0 0 3px var(--c-accent-soft); transform: translateY(-2px); }
+.mandato__n { font-family: var(--font-display); font-size: .8rem; letter-spacing: .14em; text-transform: uppercase; color: var(--c-accent-blue); }
+.mandato__t { font-family: var(--font-display); font-size: 1.7rem; margin: 0; color: var(--c-ink); }
+.mandato__lema { font-size: .88rem; color: var(--c-m2-dark); font-weight: 600; margin: 0; }
+.mandato__encargo { font-size: .95rem; margin: 0; color: var(--c-body); }
+.mandato__puntos { margin: 0; padding-left: 1.1em; font-size: .86rem; color: var(--c-ink-soft); }
+.mandato__puntos li { margin: .25em 0; }
+.mandato__pie { display: flex; flex-wrap: wrap; gap: var(--sp-2); align-items: center; margin-top: auto; }
+
+/* --------------------------------------------------------- Temporizador */
+.crono {
+  background: var(--c-ink); color: #fff; border-radius: var(--radius);
+  padding: var(--sp-6); display: grid; gap: var(--sp-5);
+}
+.crono__display {
+  font-family: var(--font-display); font-size: clamp(4.5rem, 18vw, 11rem);
+  line-height: .85; text-align: center; letter-spacing: .02em;
+  font-variant-numeric: tabular-nums;
+}
+.crono[data-fase="preguntas"] .crono__display { color: var(--c-accent); }
+.crono[data-fase="fin"] .crono__display { color: #ffb02e; }
+.crono__etapa {
+  text-align: center; font-size: .9rem; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--c-white-soft);
+}
+.crono__barra { height: 10px; border-radius: 999px; background: rgba(255, 255, 255, .14); overflow: hidden; }
+.crono__barra i { display: block; height: 100%; background: var(--c-accent); border-radius: 999px; transition: width .3s linear; }
+.crono[data-fase="fin"] .crono__barra i { background: #ffb02e; }
+.crono__controles { display: flex; flex-wrap: wrap; gap: var(--sp-3); justify-content: center; }
+.crono__config { display: flex; flex-wrap: wrap; gap: var(--sp-4); justify-content: center; font-size: .84rem; color: var(--c-white-soft); }
+.crono__config label { display: flex; align-items: center; gap: .5em; }
+.crono__config input {
+  width: 4.5em; padding: .3em .4em; border-radius: 6px; border: 1px solid var(--c-line-blue);
+  background: rgba(255, 255, 255, .08); color: #fff; text-align: right;
+}
+.crono__equipo { text-align: center; font-family: var(--font-display); font-size: 1.6rem; color: var(--c-accent); }
+
+/* ------------------------------------------------------------- Scoring */
+.scoretabla { width: 100%; border-collapse: collapse; font-size: .88rem; min-width: 720px; }
+.scoretabla th, .scoretabla td { padding: .5em .55em; border-bottom: 1px solid var(--c-line); text-align: center; }
+.scoretabla th:first-child, .scoretabla td:first-child { text-align: left; }
+.scoretabla thead th { font-size: .72rem; text-transform: uppercase; letter-spacing: .04em; color: var(--c-ink-soft); }
+.scoretabla tbody tr:hover { background: var(--c-accent-soft); }
+.scoretabla input[type="number"] {
+  width: 4.2em; padding: .3em; text-align: center;
+  border: 1px solid var(--c-line); border-radius: 6px;
+}
+.scoretabla .total { font-family: var(--font-display); font-size: 1.4rem; color: var(--c-ink); }
+.scoretabla__equipo { font-weight: 600; color: var(--c-ink); }
+.scoretabla__equipo small { display: block; font-weight: 400; color: var(--c-ink-soft); font-size: .78rem; }
+
+/* --------------------------------------------------- Ranking (payoff) */
+.ranking { display: grid; gap: var(--sp-3); }
+.rank-fila {
+  display: grid; grid-template-columns: 58px 1fr auto; gap: var(--sp-4); align-items: center;
+}
+.rank-pos { font-family: var(--font-display); font-size: clamp(2rem, 5vw, 3rem); line-height: 1; color: var(--c-white-soft); text-align: right; }
+.rank-fila:first-child .rank-pos { color: var(--c-accent); }
+.rank-cuerpo { min-width: 0; }
+.rank-nombre { font-family: var(--font-display); font-size: clamp(1.2rem, 2.6vw, 1.7rem); color: #fff; }
+.rank-barra { height: 12px; border-radius: 999px; background: rgba(255, 255, 255, .14); overflow: hidden; margin-top: 6px; }
+.rank-barra i { display: block; height: 100%; background: rgba(255, 255, 255, .5); border-radius: 999px; transition: width .5s cubic-bezier(.2,.7,.2,1); }
+.rank-fila:first-child .rank-barra i { background: var(--c-accent); }
+.rank-pts { font-family: var(--font-display); font-size: clamp(1.6rem, 3.4vw, 2.4rem); color: #fff; }
+
+/* --------------------------------------------------------- Recordatorio */
+.recordatorio {
+  border: 1px dashed var(--c-accent-blue); border-radius: var(--radius);
+  background: var(--c-accent-soft); padding: var(--sp-4) var(--sp-5);
+  font-size: .95rem; color: var(--c-ink); margin-top: var(--sp-5);
+}

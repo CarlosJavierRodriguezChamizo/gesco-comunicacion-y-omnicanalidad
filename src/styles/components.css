@@ -1,0 +1,258 @@
+/* =========================================================================
+   components.css — Estilos de los componentes reutilizables.
+   Asume que tokens.css / base.css ya están cargados.
+   ========================================================================= */
+
+/* --------------------------------------------------------------- Header */
+.site-header {
+  width: 100%;
+  border-bottom: 1px solid var(--c-line);
+  background: var(--c-bg);
+}
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-5);
+  min-height: 64px;
+  padding-block: var(--sp-3);
+}
+.site-header__brand { display: flex; align-items: center; gap: var(--sp-3); flex-wrap: wrap; }
+/* Logo como background-image: Vite reescribe la URL relativa (offline en
+   cualquier ruta). background-size:contain encaja el SVG sin deformarlo. */
+.site-header__logo {
+  display: block; height: 40px; width: 116px;
+  background-repeat: no-repeat; background-position: left center; background-size: contain;
+}
+.site-header__logo--blue { background-image: url("/assets/logo_ESIC_azul.svg"); }
+.site-header__logo--white { background-image: url("/assets/logo_ESIC_blanco.svg"); }
+.site-header__nav { display: flex; flex-wrap: wrap; gap: var(--sp-4); align-items: center; }
+.site-header__nav a {
+  text-decoration: none;
+  color: var(--c-ink);
+  font-weight: 600;
+  font-size: .98rem;
+}
+.site-header__nav a:hover { color: var(--c-accent-blue); }
+
+/* Variante sobre azul */
+.site-header--blue { background: var(--c-bg-blue); border-bottom-color: var(--c-line-blue); }
+.site-header--blue .site-header__nav a { color: #fff; }
+.site-header--blue .site-header__nav a:hover { color: var(--c-accent); }
+
+/* Migas de pan */
+.breadcrumb { font-size: .9rem; }
+.breadcrumb ol {
+  list-style: none; margin: 0; padding: 0;
+  display: flex; flex-wrap: wrap; gap: var(--sp-2); align-items: center;
+}
+.breadcrumb li { display: flex; align-items: center; gap: var(--sp-2); color: var(--c-ink-soft); }
+.breadcrumb li + li::before { content: "/"; color: var(--c-line); }
+.breadcrumb a { color: var(--c-ink-soft); text-decoration: none; }
+.breadcrumb a:hover { color: var(--c-accent-blue); }
+.breadcrumb [aria-current="page"] { color: var(--c-ink); font-weight: 600; }
+.site-header--blue .breadcrumb a,
+.site-header--blue .breadcrumb li { color: var(--c-white-soft); }
+.site-header--blue .breadcrumb [aria-current="page"] { color: #fff; }
+
+/* ----------------------------------------------------------------- Card */
+.card {
+  background: var(--c-bg);
+  border: 1px solid var(--c-line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  padding: var(--sp-5);
+}
+.card__title { margin: 0 0 var(--sp-2); }
+.card__body { color: var(--c-body); }
+.card--link { display: block; text-decoration: none; color: inherit; transition: box-shadow .15s, transform .15s; }
+.card--link:hover { box-shadow: var(--shadow); transform: translateY(-2px); }
+.card--accent { border-top: 4px solid var(--c-accent); }
+
+/* Sobre azul: tarjeta translúcida con texto blanco */
+.section--blue .card {
+  background: rgba(255, 255, 255, .08);
+  border-color: var(--c-line-blue);
+  color: #fff;
+  box-shadow: none;
+}
+.section--blue .card__body { color: var(--c-white-soft); }
+
+/* ----------------------------------------------------------------- Chip */
+.chip {
+  display: inline-flex; align-items: center; gap: var(--sp-2);
+  padding: .3em .8em; border-radius: var(--radius-pill);
+  background: var(--c-accent-soft);   /* turquesa SOLO como fondo */
+  color: var(--c-ink);                /* texto en ink (contraste OK) */
+  font-size: .85rem; font-weight: 600; line-height: 1;
+}
+.chip--outline { background: transparent; border: 1px solid var(--c-line); color: var(--c-ink); }
+.section--blue .chip { background: rgba(255, 255, 255, .14); color: #fff; }
+
+/* ------------------------------------------------------------------ KPI */
+.kpi { display: flex; flex-direction: column; gap: var(--sp-1); }
+.kpi__num {
+  font-family: var(--font-display);
+  font-size: clamp(2.6rem, 6vw, 4.4rem);
+  line-height: .95; color: var(--c-accent-blue); letter-spacing: .01em;
+}
+.kpi__label { color: var(--c-ink-soft); font-size: .95rem; max-width: 24ch; }
+.kpi__sub { color: var(--c-ink-soft); font-size: .8rem; }
+.section--blue .kpi__num { color: var(--c-accent); }
+.section--blue .kpi__label,
+.section--blue .kpi__sub { color: var(--c-white-soft); }
+
+/* --------------------------------------------------------------- Botón */
+.btn {
+  --btn-fg: #fff;
+  --btn-bg: var(--c-accent-blue);
+  display: inline-flex; align-items: center; justify-content: center; gap: var(--sp-2);
+  padding: .7em 1.4em; border-radius: var(--radius-pill);
+  border: 2px solid transparent;
+  font: 600 1rem/1 var(--font-body);
+  text-decoration: none; cursor: pointer;
+  background: var(--btn-bg); color: var(--btn-fg);
+  transition: background .15s, color .15s, border-color .15s, transform .1s;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn:active { transform: translateY(0); }
+.btn:disabled, .btn[aria-disabled="true"] { opacity: .5; cursor: not-allowed; transform: none; }
+
+.btn--primary { background: var(--c-accent-blue); color: #fff; border-color: var(--c-accent-blue); }
+.btn--primary:hover { background: #0036b3; border-color: #0036b3; }
+.btn--secondary { background: transparent; color: var(--c-accent-blue); border-color: var(--c-accent-blue); }
+.btn--secondary:hover { background: var(--c-accent-soft); }
+.btn--ghost { background: transparent; color: var(--c-accent-blue); border-color: transparent; }
+.btn--ghost:hover { background: var(--c-accent-soft); }
+.btn--sm { padding: .45em .95em; font-size: .85rem; }
+
+/* Variantes sobre azul */
+.section--blue .btn--primary { background: var(--c-accent); color: var(--c-ink); border-color: var(--c-accent); }
+.section--blue .btn--primary:hover { background: #08c7aa; border-color: #08c7aa; }
+.section--blue .btn--secondary { color: #fff; border-color: #fff; }
+.section--blue .btn--secondary:hover { background: rgba(255, 255, 255, .14); }
+.section--blue .btn--ghost { color: #fff; }
+.section--blue .btn--ghost:hover { background: rgba(255, 255, 255, .14); }
+
+/* --------------------------------------------------------- Badge módulo */
+.badge {
+  display: inline-flex; align-items: center;
+  padding: .28em .7em; border-radius: var(--radius-sm);
+  font: 600 .8rem/1 var(--font-display);
+  letter-spacing: .04em; text-transform: uppercase;
+  color: #fff; background: var(--c-ink);
+}
+.badge--m1 { background: var(--c-m1); color: var(--c-m1-fg); }
+.badge--m2 { background: var(--c-m2); color: var(--c-m2-fg); }
+.badge--m3 { background: var(--c-m3); color: var(--c-m3-fg); }
+
+/* ====================================================== StatePanel ===== */
+.statepanel {
+  border: 1px solid var(--c-line);
+  border-left: 5px solid var(--c-accent);
+  border-radius: var(--radius);
+  background: var(--c-surface);
+  padding: var(--sp-5);
+  display: grid; gap: var(--sp-4);
+}
+.statepanel__title { font-size: 1.5rem; margin: 0 0 var(--sp-2); }
+.statepanel__lead { margin: 0; font-size: .95rem; color: var(--c-ink-soft); max-width: 70ch; }
+.statepanel__lead code { background: #fff; border: 1px solid var(--c-line); border-radius: 4px; padding: 0 .3em; }
+.statepanel__actions { display: flex; flex-wrap: wrap; gap: var(--sp-3); }
+.statepanel__import { display: grid; gap: var(--sp-2); justify-items: start; }
+.statepanel__label { font-size: .82rem; font-weight: 600; color: var(--c-ink); }
+.statepanel__paste {
+  width: 100%; padding: .6em .7em; border: 1px solid var(--c-line);
+  border-radius: var(--radius-sm); font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: .82rem; background: #fff; resize: vertical;
+}
+.statepanel__status { min-height: 1.4em; font-size: .9rem; }
+.statepanel__status[data-tipo="ok"] { color: var(--c-m2-dark); font-weight: 600; }
+.statepanel__status[data-tipo="error"] { color: #b3261e; font-weight: 600; }
+
+/* Zona de arrastre */
+.dropzone {
+  width: 100%;
+  display: flex; align-items: center; gap: var(--sp-3);
+  padding: var(--sp-5); border: 2px dashed var(--c-line);
+  border-radius: var(--radius); background: #fff; cursor: pointer;
+  color: var(--c-ink-soft); transition: border-color .15s, background .15s;
+}
+.dropzone:hover, .dropzone.is-over { border-color: var(--c-accent-blue); background: var(--c-accent-soft); color: var(--c-ink); }
+.dropzone__icon { font-size: 1.6rem; line-height: 1; color: var(--c-accent-blue); }
+.dropzone__text { font-size: .95rem; }
+.dropzone code { background: var(--c-surface); border-radius: 4px; padding: 0 .3em; }
+
+/* ======================================================== AskAIButton == */
+.askai { display: flex; flex-wrap: wrap; align-items: center; gap: var(--sp-3); }
+.askai__hint { max-width: 46ch; }
+.askai__ok { min-width: 0; }
+.askai__ok[data-tipo="ok"] { color: var(--c-m2-dark); font-weight: 600; }
+.askai__ok[data-tipo="error"] { color: #b3261e; font-weight: 600; }
+
+/* ====================================================== RevealMoment === */
+.reveal-moment {
+  width: 100%;
+  padding-block: clamp(2rem, 5vw, 4rem);
+  margin-block: var(--sp-6);
+}
+.reveal-moment--blue { background: var(--c-bg-blue); color: #fff; }
+.reveal-moment--light { background: var(--c-surface); color: var(--c-body); }
+.reveal-moment__head { max-width: 60ch; margin-bottom: var(--sp-5); }
+.reveal-moment__eyebrow {
+  display: block; font-family: var(--font-display);
+  letter-spacing: .16em; text-transform: uppercase; font-size: .8rem;
+  color: var(--c-accent); margin-bottom: var(--sp-2);
+}
+.reveal-moment--light .reveal-moment__eyebrow { color: var(--c-accent-blue); }
+.reveal-moment__title {
+  font-size: clamp(2rem, 4.6vw, 3.4rem); line-height: 1; margin: 0;
+  color: #fff;
+}
+.reveal-moment--light .reveal-moment__title { color: var(--c-ink); }
+.reveal-moment__lead { font-size: clamp(1rem, 1.6vw, 1.25rem); color: var(--c-white-soft); margin: var(--sp-3) 0 0; }
+.reveal-moment--light .reveal-moment__lead { color: var(--c-ink-soft); }
+.reveal-moment__foot { font-size: .92rem; color: var(--c-white-soft); margin: var(--sp-4) 0 0; max-width: 80ch; }
+.reveal-moment--light .reveal-moment__foot { color: var(--c-ink-soft); }
+.reveal-moment__foot strong { color: var(--c-accent); }
+.reveal-moment--light .reveal-moment__foot strong { color: var(--c-accent-blue); }
+
+/* Entrada del payoff: escala + fundido, cancelable por preferencia del sistema */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal-moment__body.is-in { animation: rm-in .55s cubic-bezier(.2, .7, .2, 1) both; }
+  @keyframes rm-in { from { opacity: 0; transform: translateY(18px) scale(.985); } to { opacity: 1; transform: none; } }
+}
+
+/* Estado vacío del payoff (antes de que el alumno haya trabajado) */
+.reveal-moment__empty {
+  border: 2px dashed var(--c-line-blue); border-radius: var(--radius);
+  padding: var(--sp-7); text-align: center; color: var(--c-white-soft); font-size: 1.05rem;
+}
+.reveal-moment--light .reveal-moment__empty { border-color: var(--c-line); color: var(--c-ink-soft); }
+
+/* --- Barras de reparto del payoff (compartidas por varias herramientas) --- */
+.payoff-franjas { display: grid; gap: var(--sp-3); margin-top: var(--sp-6); }
+.payoff-franja { display: grid; grid-template-columns: minmax(120px, 210px) 1fr 68px; gap: var(--sp-3); align-items: center; }
+.payoff-franja__lab { font-size: .9rem; color: var(--c-white-soft); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.payoff-franja__bar { height: 16px; border-radius: 999px; background: rgba(255, 255, 255, .14); overflow: hidden; }
+.payoff-franja__bar i { display: block; height: 100%; background: var(--c-accent); border-radius: 999px; transition: width .5s cubic-bezier(.2, .7, .2, 1); }
+.payoff-franja--destacada .payoff-franja__bar i { background: #fff; }
+.payoff-franja__pct { font-family: var(--font-display); font-size: 1.5rem; color: #fff; text-align: right; }
+.reveal-moment--light .payoff-franja__lab { color: var(--c-ink-soft); }
+.reveal-moment--light .payoff-franja__bar { background: var(--c-line); }
+.reveal-moment--light .payoff-franja__pct { color: var(--c-ink); }
+
+/* --- Sobre fondo azul, el azul deja de verse -------------------------------
+   El badge M1 y el chip TOFU usan el mismo #0047e9 que el fondo corporativo:
+   sobre una sección azul desaparecen. Aquí se les da una piel legible sin
+   cambiar su identidad de color en el resto del sitio. */
+.section--blue .badge--m1,
+.reveal-moment--blue .badge--m1 {
+  background: #ffffff; color: var(--c-m1);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .9);
+}
+.section--blue .badge--m3,
+.reveal-moment--blue .badge--m3 {
+  background: var(--c-m3); color: #fff;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .45);
+}

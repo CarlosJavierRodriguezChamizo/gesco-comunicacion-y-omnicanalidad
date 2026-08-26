@@ -1,0 +1,108 @@
+/* =========================================================================
+   calendario.css — Rejilla 12 meses × plataformas con las dos bandas de
+   estacionalidad de fondo, y fichas de brief de creatividad.
+   ========================================================================= */
+
+/* --------------------------------------------------------- Configuración */
+.cal-config { display: grid; gap: var(--sp-4); }
+@media (min-width: 860px) { .cal-config { grid-template-columns: 1fr 1fr; } }
+.plataformas { display: flex; flex-wrap: wrap; gap: var(--sp-2); }
+.plat-chip {
+  display: inline-flex; align-items: center; gap: .4em;
+  border: 1.5px solid var(--c-line); border-radius: var(--radius-pill);
+  padding: .35em .9em; font-size: .84rem; font-weight: 600;
+  background: #fff; color: var(--c-ink-soft); cursor: pointer;
+}
+.plat-chip[aria-pressed="true"] { border-color: var(--c-accent-blue); background: var(--c-accent-blue); color: #fff; }
+.plat-nueva { display: flex; gap: var(--sp-2); align-items: center; }
+.plat-nueva input { padding: .35em .6em; border: 1px solid var(--c-line); border-radius: var(--radius-sm); }
+
+/* ------------------------------------------------------- Rejilla anual */
+.cal-wrap { position: relative; min-width: 900px; }
+
+.cal-grid {
+  display: grid;
+  grid-template-columns: 150px repeat(12, minmax(58px, 1fr));
+  gap: 3px;
+  position: relative; z-index: 1;
+}
+.cal-mes {
+  font-family: var(--font-display); font-size: .82rem; text-align: center;
+  color: var(--c-ink); padding: .35em 0; letter-spacing: .04em; text-transform: uppercase;
+}
+.cal-plat {
+  display: flex; align-items: center; font-size: .82rem; font-weight: 600; color: var(--c-ink);
+  padding-right: var(--sp-2); border-right: 2px solid var(--c-line);
+}
+.cal-celda {
+  min-height: 62px; border: 1px solid var(--c-line); border-radius: 6px;
+  background: rgba(255, 255, 255, .74); padding: 3px;
+  display: flex; flex-direction: column; gap: 2px; cursor: pointer;
+  transition: border-color .15s, background .15s;
+}
+.cal-celda:hover, .cal-celda:focus-visible { border-color: var(--c-accent-blue); background: #fff; }
+.cal-pieza {
+  font-size: .62rem; line-height: 1.2; border-radius: 4px; padding: .18em .3em;
+  color: #fff; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.cal-pieza--tofu { background: var(--c-tofu); }
+.cal-pieza--mofu { background: var(--c-mofu); }
+.cal-pieza--bofu { background: var(--c-bofu); }
+.cal-pieza--sin  { background: #6b7280; }
+
+/* Bandas de estacionalidad, como fondo de la rejilla */
+.cal-bandas {
+  position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  display: grid; grid-template-columns: 150px repeat(12, minmax(58px, 1fr)); gap: 3px;
+}
+.cal-bandas__hueco { grid-column: 1; }
+.cal-banda-col { position: relative; }
+.cal-banda-col i {
+  position: absolute; left: 0; right: 0; bottom: 0; display: block; border-radius: 4px 4px 0 0;
+}
+.cal-banda-col .b-producto { background: rgba(0, 71, 233, .16); }
+.cal-banda-col .b-turismo  { background: rgba(10, 228, 195, .28); }
+
+.cal-leyenda { display: flex; flex-wrap: wrap; gap: var(--sp-4); margin-top: var(--sp-4); font-size: .82rem; color: var(--c-ink-soft); }
+.cal-leyenda span { display: inline-flex; align-items: center; gap: .5em; }
+.cal-leyenda i { width: 16px; height: 16px; border-radius: 4px; display: inline-block; }
+
+/* Editor de pieza (formulario emergente en línea) */
+.pieza-editor {
+  border: 1px solid var(--c-line); border-left: 5px solid var(--c-accent-blue);
+  border-radius: var(--radius); background: var(--c-surface);
+  padding: var(--sp-4) var(--sp-5); margin-top: var(--sp-4);
+}
+.pieza-editor h3 { font-size: 1.15rem; margin: 0 0 var(--sp-3); }
+.pieza-editor[hidden] { display: none; }
+.piezas-lista { display: grid; gap: var(--sp-2); margin-top: var(--sp-3); }
+.pieza-fila {
+  display: flex; flex-wrap: wrap; gap: var(--sp-2); align-items: center;
+  background: #fff; border: 1px solid var(--c-line); border-radius: var(--radius-sm); padding: .4em .6em;
+  font-size: .84rem;
+}
+.pieza-fila button { border: none; background: transparent; cursor: pointer; color: var(--c-ink-soft); margin-left: auto; font-size: 1rem; }
+.pieza-fila button:hover { color: #b3261e; }
+
+/* --------------------------------------------------------------- Briefs */
+.briefs { display: grid; gap: var(--sp-5); grid-template-columns: 1fr; }
+@media (min-width: 900px)  { .briefs { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1300px) { .briefs { grid-template-columns: repeat(3, 1fr); } }
+.brief {
+  border: 1px solid var(--c-line); border-top: 5px solid var(--c-accent);
+  border-radius: var(--radius); padding: var(--sp-5); display: grid; gap: var(--sp-3);
+}
+.brief__head { display: flex; align-items: baseline; gap: var(--sp-3); }
+.brief__n { font-family: var(--font-display); font-size: 2rem; color: var(--c-accent-blue); line-height: 1; }
+.brief__t { font-family: var(--font-display); font-size: 1.25rem; margin: 0; color: var(--c-ink); }
+.brief__completo { margin-left: auto; font-size: .72rem; font-weight: 700; color: var(--c-ink-soft); }
+.brief__completo[data-ok="si"] { color: var(--c-m2-dark); }
+
+/* ---------------------------------------- Payoff: las dos estacionalidades */
+.season { width: 100%; height: auto; display: block; }
+.season text { font-family: var(--font-body); fill: #fff; }
+.season .s-mes { font-size: 13px; }
+.season .s-lab { font-family: var(--font-display); font-size: 15px; }
+.season-leyenda { display: flex; flex-wrap: wrap; gap: var(--sp-5); margin-top: var(--sp-4); }
+.season-leyenda span { display: inline-flex; align-items: center; gap: .5em; font-size: .9rem; color: var(--c-white-soft); }
+.season-leyenda i { width: 18px; height: 18px; border-radius: 4px; display: inline-block; }

@@ -1,0 +1,141 @@
+/* =========================================================================
+   tool.css — Andamiaje común de las herramientas interactivas.
+   Intro, barra de acciones, campos de formulario, panel de validación
+   estructural y botón de pista. Estilos propios de cada tool en su archivo.
+   ========================================================================= */
+
+.tool-intro { max-width: 72ch; }
+.tool-intro h1 { margin-bottom: var(--sp-2); }
+.tool-intro .lead { margin-top: 0; }
+.tool-intro .fuente { margin-top: var(--sp-3); }
+
+/* Bloque de una parte de la herramienta (a / b) */
+.tool-part { margin-top: var(--sp-7); }
+.tool-part__head {
+  display: flex; flex-wrap: wrap; gap: var(--sp-3);
+  align-items: baseline; justify-content: space-between;
+  padding-bottom: var(--sp-3); border-bottom: 2px solid var(--c-line);
+  margin-bottom: var(--sp-5);
+}
+.tool-part__head h2 { margin: 0; }
+.tool-part__num {
+  font-family: var(--font-display); color: var(--c-accent-blue);
+  font-size: .9rem; letter-spacing: .14em; text-transform: uppercase;
+}
+
+/* Barra de acciones pegajosa */
+.toolbar {
+  position: sticky; top: 0; z-index: 20;
+  display: flex; flex-wrap: wrap; align-items: center; gap: var(--sp-3);
+  padding: var(--sp-3) 0; margin-top: var(--sp-4);
+  background: var(--c-bg);
+  border-bottom: 1px solid var(--c-line);
+}
+.toolbar__spacer { flex: 1 1 auto; }
+
+/* Marcador (X/10, X/32…) */
+.score {
+  font-family: var(--font-display); font-size: 1.5rem; color: var(--c-ink);
+  display: inline-flex; align-items: baseline; gap: .3em; white-space: nowrap;
+}
+.score small { font-family: var(--font-body); font-size: .78rem; color: var(--c-ink-soft); }
+.score[data-ok="si"] { color: var(--c-m2-dark); }
+
+/* Región viva de estado */
+.status-live { font-size: .9rem; color: var(--c-ink-soft); min-height: 1.4em; }
+
+/* ------------------------------------------------------------- Campos */
+.field { display: flex; flex-direction: column; gap: 4px; }
+.field label, .field > .field__label { font-size: .82rem; font-weight: 600; color: var(--c-ink); }
+.field__help { font-size: .76rem; color: var(--c-ink-soft); }
+.field input[type="text"],
+.field input[type="number"],
+.field select,
+.field textarea {
+  padding: .55em .7em; border: 1px solid var(--c-line);
+  border-radius: var(--radius-sm); background: #fff; width: 100%;
+  font-size: .95rem;
+}
+.field textarea { resize: vertical; min-height: 4.5em; }
+.field input:focus-visible, .field select:focus-visible, .field textarea:focus-visible {
+  outline: 3px solid var(--c-accent-blue); outline-offset: 1px;
+}
+.fields { display: grid; gap: var(--sp-4); }
+@media (min-width: 700px) { .fields--2 { grid-template-columns: 1fr 1fr; } }
+
+/* ------------------------------------------------ Validación estructural */
+/* Comprueba la FORMA del trabajo (¿está completo?), nunca el contenido. */
+.check-panel {
+  border: 1px solid var(--c-line); border-left: 5px solid var(--c-accent-blue);
+  border-radius: var(--radius); background: var(--c-surface);
+  padding: var(--sp-4) var(--sp-5); margin-top: var(--sp-5);
+}
+.check-panel h3 { font-size: 1.2rem; margin: 0 0 var(--sp-3); }
+.check-list { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--sp-2); }
+.check-list li {
+  display: flex; align-items: flex-start; gap: var(--sp-3);
+  font-size: .92rem; color: var(--c-body);
+}
+.check-list li::before {
+  content: "○"; flex: none; width: 1.2em; text-align: center;
+  color: var(--c-ink-soft); font-weight: 700; line-height: 1.5;
+}
+.check-list li[data-ok="si"]::before { content: "●"; color: var(--c-m2-dark); }
+.check-list li[data-ok="si"] { color: var(--c-ink-soft); }
+
+/* ------------------------------------------------------------- Pista */
+.pista { margin-top: var(--sp-4); }
+.pista__btn {
+  display: inline-flex; align-items: center; gap: .5em;
+  padding: .45em 1em; border-radius: var(--radius-pill);
+  border: 1.5px dashed var(--c-accent-blue); background: transparent;
+  color: var(--c-accent-blue); font-size: .85rem; font-weight: 600; cursor: pointer;
+}
+.pista__btn:hover { background: var(--c-accent-soft); }
+.pista__texto {
+  margin: var(--sp-3) 0 0; padding: var(--sp-4);
+  border-radius: var(--radius); background: var(--c-accent-soft);
+  font-size: .92rem; color: var(--c-ink); max-width: 74ch;
+}
+.pista__texto[hidden] { display: none; }
+.pista__texto ul { margin: var(--sp-2) 0 0; }
+
+/* --------------------------------------------------- Pista de teclado */
+.kbd-hint { font-size: .82rem; color: var(--c-ink-soft); margin-top: var(--sp-3); }
+.kbd-hint kbd {
+  font-family: var(--font-body); font-size: .8em; background: #eef1f8;
+  border: 1px solid var(--c-line); border-bottom-width: 2px; border-radius: 5px;
+  padding: .1em .45em; color: var(--c-ink);
+}
+
+/* ------------------------------------------------------ Tabla genérica */
+.tabla { width: 100%; border-collapse: collapse; font-size: .88rem; }
+.tabla th, .tabla td { padding: .5em .6em; text-align: left; border-bottom: 1px solid var(--c-line); vertical-align: top; }
+.tabla thead th {
+  position: sticky; top: 0; background: var(--c-surface); z-index: 2;
+  font-size: .76rem; text-transform: uppercase; letter-spacing: .04em; color: var(--c-ink-soft);
+}
+.tabla tbody tr:hover { background: var(--c-accent-soft); }
+.tabla td.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* Chip de fase del funnel (compartido por varias tools) */
+.fase {
+  display: inline-flex; align-items: center; padding: .18em .6em;
+  border-radius: var(--radius-pill); font-size: .7rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .04em; color: #fff;
+}
+.fase--tofu { background: var(--c-tofu); }
+.fase--mofu { background: var(--c-mofu); }
+.fase--bofu { background: var(--c-bofu); }
+.fase--sin  { background: transparent; color: var(--c-ink-soft); border: 1px dashed var(--c-line); }
+
+/* --------------------------------------------------- Pie de herramienta */
+.tool-footer { padding: var(--sp-6) 0; color: var(--c-ink-soft); font-size: .88rem; }
+
+/* Chips de fase sobre fondo azul: TOFU es del mismo azul que el fondo. */
+.section--blue .fase--tofu,
+.reveal-moment--blue .fase--tofu { background: #ffffff; color: var(--c-tofu); }
+.section--blue .fase--bofu,
+.reveal-moment--blue .fase--bofu { background: #0ae4c3; color: var(--c-ink); }
+.section--blue .fase--sin,
+.reveal-moment--blue .fase--sin { color: var(--c-white-soft); border-color: var(--c-line-blue); }

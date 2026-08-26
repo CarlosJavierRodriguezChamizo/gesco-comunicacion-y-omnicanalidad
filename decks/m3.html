@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>M3 · Nurturing, automatización y postventa — ESIC</title>
+</head>
+<body class="deck">
+  <img class="deck-logo deck-logo--white" src="/assets/logo_ESIC_blanco.svg" alt="ESIC" />
+  <img class="deck-logo deck-logo--blue" src="/assets/logo_ESIC_azul.svg" alt="ESIC" />
+  <a class="deck-home" href="/index.html">Hub</a>
+
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- 1 · Portada -->
+      <section>
+        <div class="cover">
+          <span class="badge badge--m3">M3</span>
+          <h1 class="cover__title">Nurturing,<br><span class="hl">automatización y postventa</span></h1>
+          <p class="cover__sub">Objetivo: saber qué le mandamos a un lead, cuándo,
+          con qué permiso y cómo sabemos si ha servido de algo.</p>
+          <div class="cover__rule"></div>
+        </div>
+        <aside class="notes">
+          Este módulo se reparte entre el final del día 3 (email y legal) y el día 4
+          (scoring, nurturing y medición).
+        </aside>
+      </section>
+
+      <!-- 2 · Lead scoring -->
+      <section>
+        <div class="split">
+          <div class="col-l">
+            <span class="kicker">Fase 3 · Cerrar</span>
+            <h2>Lead scoring</h2>
+            <p class="statement">No todos los leads<br><span class="hl">llegan igual.</span></p>
+          </div>
+          <div class="col-r">
+            <ul class="checks">
+              <li>Clasifica la base según <strong>criterios predeterminados</strong>.</li>
+              <li>Mide la adhesión hipotética del usuario con la marca.</li>
+              <li>Perfil, comportamiento y origen del lead pesan distinto.</li>
+              <li>Es una <strong>acción continua</strong>: cambia con cada clic.</li>
+            </ul>
+          </div>
+        </div>
+        <aside class="notes">
+          Ongoing lead scoring. Un scoring que se calcula una vez al alta y no se vuelve
+          a tocar no es scoring: es una etiqueta muerta.
+        </aside>
+      </section>
+
+      <!-- 3 · Lead nurturing -->
+      <section class="slide--light" data-background-color="#ffffff">
+        <span class="kicker">La relación</span>
+        <h2>Lead nurturing</h2>
+        <div class="cards cards--4">
+          <div class="ccard"><h3>Relación</h3><p>Constante, no intermitente. Inbound es relación, no una cita.</p></div>
+          <div class="ccard"><h3>Conocimiento</h3><p>Cada interacción nos dice más de lo que le interesa.</p></div>
+          <div class="ccard"><h3>Solución</h3><p>Que entienda cómo nuestro producto resuelve lo suyo.</p></div>
+          <div class="ccard"><h3>Prevalencia</h3><p>Estar ahí en el momento en el que decide comprar.</p></div>
+        </div>
+        <p class="muted" style="font-size:.64em;margin-top:.8em">Puede ser multicanal —retargeting, SMS, in-app, eventos—
+        pero el canal habitual del workflow es el email.</p>
+        <aside class="notes">
+          La frase que quiero que se lleven: no se trata de perseguir, se trata de seguir
+          y apoyar. Un buen contenido con periodicidad excesiva se percibe como spam.
+        </aside>
+      </section>
+
+      <!-- 4 · El workflow -->
+      <section>
+        <span class="kicker">Cómo se dibuja</span>
+        <h2>Workflow por comportamiento</h2>
+        <svg class="fig" viewBox="0 0 760 260" role="img" aria-label="Diagrama de workflow: welcome, email, y ramas según abre o no abre">
+          <g font-size="14" fill="#ffffff">
+            <rect x="10" y="105" width="120" height="50" rx="10" fill="#ffffff" fill-opacity=".18" stroke="#0ae4c3"/>
+            <text x="70" y="128" text-anchor="middle" font-size="15">Welcome</text>
+            <text x="70" y="145" text-anchor="middle" font-size="11" opacity=".75">automático</text>
+
+            <path d="M130 130 H185" stroke="#0ae4c3" stroke-width="2" fill="none" marker-end="url(#ar)"/>
+            <rect x="190" y="105" width="120" height="50" rx="10" fill="#ffffff" fill-opacity=".12" stroke="#ffffff" stroke-opacity=".4"/>
+            <text x="250" y="128" text-anchor="middle" font-size="15">Email 1</text>
+            <text x="250" y="145" text-anchor="middle" font-size="11" opacity=".75">espera 5 días</text>
+
+            <path d="M310 130 H360" stroke="#0ae4c3" stroke-width="2" fill="none"/>
+            <path d="M360 130 L400 80" stroke="#0ae4c3" stroke-width="2" fill="none" marker-end="url(#ar)"/>
+            <path d="M360 130 L400 180" stroke="#ffffff" stroke-opacity=".5" stroke-width="2" fill="none" marker-end="url(#ar2)"/>
+            <text x="372" y="98" font-size="12" fill="#0ae4c3">abre</text>
+            <text x="366" y="176" font-size="12" fill="#ffffff" opacity=".65">no abre</text>
+
+            <rect x="405" y="52" width="150" height="50" rx="10" fill="#0ae4c3" fill-opacity=".22" stroke="#0ae4c3"/>
+            <text x="480" y="75" text-anchor="middle" font-size="15">Email de cierre</text>
+            <text x="480" y="92" text-anchor="middle" font-size="11" opacity=".75">del tema en el que hizo clic</text>
+
+            <rect x="405" y="155" width="150" height="50" rx="10" fill="#ffffff" fill-opacity=".10" stroke="#ffffff" stroke-opacity=".4"/>
+            <text x="480" y="178" text-anchor="middle" font-size="15">Cambio de asunto</text>
+            <text x="480" y="195" text-anchor="middle" font-size="11" opacity=".75">y de hora de envío</text>
+
+            <path d="M555 77 H610" stroke="#0ae4c3" stroke-width="2" fill="none" marker-end="url(#ar)"/>
+            <text x="683" y="72" text-anchor="middle" font-size="14" fill="#0ae4c3">Sube el score</text>
+            <text x="683" y="90" text-anchor="middle" font-size="11" opacity=".75">y vuelve a entrar en el ciclo</text>
+          </g>
+          <defs>
+            <marker id="ar" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="#0ae4c3"/></marker>
+            <marker id="ar2" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="#ffffff" fill-opacity=".5"/></marker>
+          </defs>
+        </svg>
+        <aside class="notes">
+          Lo que decide la rama no es el calendario: es lo que hizo. Si vuelve a la web,
+          llama o hace clic en otra campaña, el ciclo se recalcula.
+        </aside>
+      </section>
+
+      <!-- 5 · Formatos de email -->
+      <section class="slide--light" data-background-color="#ffffff">
+        <span class="kicker">La herramienta</span>
+        <h2>Seis formatos de email</h2>
+        <div class="cards cards--3">
+          <div class="ccard"><h3>Newsletter</h3><p>Nutre la relación y difunde blog y social.</p></div>
+          <div class="ccard"><h3>Promocional</h3><p>Promueve una oferta: puede ser un contenido gratuito.</p></div>
+          <div class="ccard"><h3>Estacional</h3><p>Fechas señaladas, muy visual y de texto corto.</p></div>
+          <div class="ccard"><h3>Welcome</h3><p>En cuanto se convierte en lead. Apertura altísima.</p></div>
+          <div class="ccard"><h3>Transaccional</h3><p>Confirma una compra, un alta, un envío.</p></div>
+          <div class="ccard"><h3>Ecommerce</h3><p>Preventa, postventa y carritos abandonados.</p></div>
+        </div>
+        <aside class="notes">
+          Aclarad lo de "promocional": no significa email de ofertas, significa promover
+          una propuesta, que puede ser perfectamente una guía gratuita.
+        </aside>
+      </section>
+
+      <!-- 6 · El dato de las tasas de apertura -->
+      <section>
+        <div class="split">
+          <div class="col-l">
+            <span class="kicker">Un dato que cambia decisiones</span>
+            <p class="statement">El email que más se abre<br><span class="hl">es el que no vende nada.</span></p>
+          </div>
+          <div class="col-r" style="text-align:center">
+            <div class="statrow">
+              <div class="stat"><span class="big">70-90 %</span><span class="stat__lab">transaccionales y triggered</span></div>
+              <div class="stat"><span class="big">&lt; 25 %</span><span class="stat__lab">promocionales</span></div>
+            </div>
+            <p class="muted" style="font-size:.66em;max-width:20em;margin:.6em auto 0">
+            ¿No es este un buen momento para comunicar algo más?</p>
+          </div>
+        </div>
+        <aside class="notes">
+          Aquí está la oportunidad práctica: el email de confirmación de pedido tiene
+          una audiencia que el promocional no tendrá jamás, y suele ir vacío de contenido.
+        </aside>
+      </section>
+
+      <!-- 7 · Permission marketing y opt-in -->
+      <section class="slide--light" data-background-color="#ffffff">
+        <span class="kicker">Permission marketing</span>
+        <h2>Sin permiso no hay email</h2>
+        <div class="flow">
+          <div class="flow__step"><span class="num">01</span><h3>Opt-in</h3><p>Consentimiento previo, expreso y trazable. La casilla premarcada es ilegal desde 2018.</p></div>
+          <div class="flow__arrow" aria-hidden="true">→</div>
+          <div class="flow__step"><span class="num">02</span><h3>Opt-in doble</h3><p>Confirmación por email además de la casilla. Mejora la entregabilidad.</p></div>
+          <div class="flow__arrow" aria-hidden="true">→</div>
+          <div class="flow__step"><span class="num">03</span><h3>RGPD</h3><p>Obligatorio también fuera de la UE si tratas datos de ciudadanos europeos.</p></div>
+        </div>
+        <p class="muted" style="font-size:.64em;margin-top:.8em">No hacer spam no es una recomendación de estilo:
+        es una obligación legal, y además funciona mejor.</p>
+        <aside class="notes">
+          Para el caso esto es crítico: el lead se capta en España y se le escribe cuando
+          ya está en su país. El consentimiento tiene que cubrir eso desde el minuto uno.
+        </aside>
+      </section>
+
+      <!-- 8 · Entregabilidad -->
+      <section>
+        <span class="kicker">Salud de la base</span>
+        <h2>Entregabilidad</h2>
+        <div class="feats feats--3">
+          <div class="feat"><span class="feat__n">01</span><h3>Hard bounce</h3><p>La dirección no existe. Se elimina, no se reintenta.</p></div>
+          <div class="feat"><span class="feat__n">02</span><h3>Soft bounce</h3><p>Rechazo temporal: buzón lleno, servidor caído.</p></div>
+          <div class="feat"><span class="feat__n">03</span><h3>Higienización</h3><p>Limpiar la lista antes de una campaña o de migrar de herramienta.</p></div>
+          <div class="feat feat--accent"><span class="feat__n">04</span><h3>Reputación</h3><p>Si el remitente se quema, deja de llegar hasta lo que sí interesa.</p></div>
+        </div>
+        <aside class="notes">
+          Una base sucia no solo desperdicia envíos: arrastra la reputación del dominio
+          y hunde la entregabilidad de las campañas que sí estaban bien hechas.
+        </aside>
+      </section>
+
+      <!-- 9 · Marketing automation -->
+      <section class="slide--light" data-background-color="#ffffff">
+        <div class="split">
+          <div class="col-l">
+            <span class="kicker">Fase 4 · Automatización</span>
+            <h2>Marketing automation</h2>
+            <p class="statement">El mensaje correcto,<br>en el canal adecuado,<br><span class="hl">en el momento correcto.</span></p>
+          </div>
+          <div class="col-r">
+            <ul class="checks">
+              <li><strong>Optimizar el ciclo</strong> de decisión (real time lead management).</li>
+              <li><strong>Mejorar la conversión</strong> con test A/B y analítica (CRO).</li>
+              <li><strong>Customer engagement</strong>: relación uno a uno.</li>
+              <li><strong>Experiencia coherente</strong> en todos los canales.</li>
+            </ul>
+          </div>
+        </div>
+        <aside class="notes">
+          La omnicanalidad real: si personalizo la oferta en la web, la persona que le
+          atiende en la tienda tiene que verlo. Ficha de cliente 360º.
+        </aside>
+      </section>
+
+      <!-- 10 · Módulos de una plataforma -->
+      <section>
+        <span class="kicker">Qué hay dentro de la herramienta</span>
+        <h2>Los módulos que importan</h2>
+        <div class="cards cards--4">
+          <div class="ccard"><h3>Customer Data Platform</h3><p>Vista 360º del cliente. Es la piedra angular.</p></div>
+          <div class="ccard"><h3>Journey Builder</h3><p>Construye los recorridos y las decisiones en cada punto de contacto.</p></div>
+          <div class="ccard"><h3>Targeting</h3><p>Selección de audiencias y control de la saturación.</p></div>
+          <div class="ccard"><h3>APIs abiertas</h3><p>Sin integración con el resto de sistemas, la plataforma es una isla.</p></div>
+        </div>
+        <p class="muted" style="font-size:.62em;margin-top:.8em">También: CMS, campaign builder, social ads,
+        integración con DMP, predictive, geofencing, landings y reporting.</p>
+        <aside class="notes">
+          Si tienen que evaluar una herramienta, la pregunta uno es el CDP y la dos son
+          las APIs. Lo demás se soluciona; esas dos, no.
+        </aside>
+      </section>
+
+      <!-- 11 · De cliente a promotor -->
+      <section>
+        <div class="split">
+          <div class="col-l">
+            <span class="kicker">Fase 5 · Postventa</span>
+            <h2>De cliente a promotor</h2>
+            <p class="statement">No queremos fieles.<br><span class="hl">Queremos leales.</span></p>
+          </div>
+          <div class="col-r">
+            <ul class="checks">
+              <li>Acceso a contenidos <strong>antes</strong> que el público general.</li>
+              <li>Grupos y comunidad donde participar.</li>
+              <li>Testimonios, reviews y contenido propio: <strong>UGC</strong>.</li>
+              <li>Que hable de la marca es bueno; que la nutra, es pertenencia.</li>
+            </ul>
+          </div>
+        </div>
+        <aside class="notes">
+          El promotor es el que lo cuenta. Y en este caso el UGC tiene una ventaja rara:
+          las fotos del viaje ya existen. Solo hay que darles un sitio.
+        </aside>
+      </section>
+
+      <!-- 12 · KPIs del funnel -->
+      <section class="slide--light" data-background-color="#ffffff">
+        <span class="kicker">Medición</span>
+        <h2>Los KPIs de cada fase</h2>
+        <div class="cards cards--4">
+          <div class="ccard"><h3>Atracción</h3><p>Impactos, visitas, tráfico cualificado, CPC y CPM.</p></div>
+          <div class="ccard"><h3>Conversión</h3><p>Tasa de conversión, leads, <strong>CPL</strong>, abandono de formulario.</p></div>
+          <div class="ccard"><h3>Nurturing</h3><p>Apertura, CTR, bounces, evolución del score, lead-to-customer.</p></div>
+          <div class="ccard"><h3>Postventa</h3><p>Recompra, ticket medio, UGC, recomendación.</p></div>
+        </div>
+        <p class="muted" style="font-size:.64em;margin-top:.8em">Elegid un número de cabecera y defendedlo.
+        Medir todo es no medir nada.</p>
+        <aside class="notes">
+          En el pitch, el equipo de medición tiene que decir cuál es su KPI de cabecera
+          y qué corta si le bajan el presupuesto un 30%.
+        </aside>
+      </section>
+
+      <!-- 13 · Aterrizaje -->
+      <section>
+        <div class="caso">
+          <span class="caso__tag">En Alimentos España</span>
+          <h2>La ventana son 90 días</h2>
+          <p>El turista aterriza en casa con el sabor todavía reciente y sin producto.
+          A los tres meses, el recuerdo se ha diluido y la despensa ya se ha llenado con
+          otra cosa. Todo el workflow del caso cabe en esos <strong>90 días posteriores
+          al vuelo de vuelta</strong>.</p>
+        </div>
+        <aside class="notes">
+          El primer email no puede salir a los quince días. La ventana empieza a cerrarse
+          desde el momento en que recoge la maleta.
+        </aside>
+      </section>
+
+      <!-- 14 · Cierre -->
+      <section>
+        <div class="cover">
+          <span class="kicker">Ahora vosotros</span>
+          <h1 class="cover__title">Puntuad los leads.<br><span class="hl">Dibujad los 90 días.</span></h1>
+          <p class="cover__sub">Criterios, pesos y un workflow completo con emails,
+          esperas y condiciones.</p>
+          <div class="cover__rule"></div>
+          <p style="margin-top:1em"><a class="deck-cta" href="/tools/nurturing.html">Abrir la herramienta</a></p>
+        </div>
+        <aside class="notes">
+          Después de esto, calendario y creatividades. Y luego el pitch.
+        </aside>
+      </section>
+
+    </div>
+  </div>
+  <script type="module" src="/src/js/deck.js"></script>
+</body>
+</html>

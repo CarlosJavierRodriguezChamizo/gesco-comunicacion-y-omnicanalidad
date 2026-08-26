@@ -1,0 +1,475 @@
+{
+  "titulo": "Inbound Marketing y Medios Digitales",
+  "asignatura": "Comunicación y Omnicanalidad · GESCO · ESIC",
+  "horasTotales": 20,
+  "estructuraBloque": "Bloques de 60': 15' de teoría + 15' de aplicación al caso + 30' de desarrollo del alumno.",
+  "cats": {
+    "framing": {
+      "label": "Framing",
+      "cls": "cat--framing"
+    },
+    "deck": {
+      "label": "Teoría",
+      "cls": "cat--deck"
+    },
+    "tool": {
+      "label": "Práctica",
+      "cls": "cat--tool"
+    },
+    "kahoot": {
+      "label": "Kahoot",
+      "cls": "cat--kahoot"
+    },
+    "pitch": {
+      "label": "Pitch",
+      "cls": "cat--pitch"
+    },
+    "descanso": {
+      "label": "Descanso",
+      "cls": "cat--rest"
+    }
+  },
+  "dias": [
+    {
+      "id": "d1",
+      "dia": "Día 1",
+      "fecha": "Jueves 11/09",
+      "franja": "5 h",
+      "lema": "Quién es y qué necesita",
+      "bloques": [
+        {
+          "time": "0:00",
+          "dur": "30'",
+          "cat": "framing",
+          "title": "0 · Apertura",
+          "contenido": "Presentación, reglas del taller y la paradoja del caso: 82,8 M de turistas, 30.470 M€ de exportación, y el producto que se queda en España.",
+          "links": [
+            {
+              "label": "Deck de apertura",
+              "href": "decks/intro.html",
+              "kind": "deck"
+            }
+          ]
+        },
+        {
+          "time": "0:30",
+          "dur": "60'",
+          "cat": "deck",
+          "title": "1 · El crossumer",
+          "contenido": "Consumidor saturado, digitalizado y desconfiado. Del outbound al inbound. Allbound.",
+          "block": "m1",
+          "links": [
+            {
+              "label": "Abrir M1",
+              "href": "decks/m1.html",
+              "kind": "deck"
+            }
+          ]
+        },
+        {
+          "time": "1:30",
+          "dur": "15'",
+          "cat": "descanso",
+          "title": "Descanso"
+        },
+        {
+          "time": "1:45",
+          "dur": "75'",
+          "cat": "tool",
+          "title": "2 · Buyer persona",
+          "contenido": "Del target demográfico al buyer persona con Customer Insights. Dos arquetipos del caso.",
+          "block": "m1",
+          "links": [
+            {
+              "label": "Práctica: buyer persona",
+              "href": "tools/buyer-persona.html",
+              "kind": "tool"
+            }
+          ]
+        },
+        {
+          "time": "3:00",
+          "dur": "75'",
+          "cat": "tool",
+          "title": "3 · Mapa de momentos",
+          "contenido": "TOFU / MOFU / BOFU sobre un viaje: antes, durante y después de España. Matriz 3×3.",
+          "block": "m1",
+          "links": [
+            {
+              "label": "Práctica: matriz de momentos",
+              "href": "tools/buyer-persona.html#matriz",
+              "kind": "tool"
+            }
+          ]
+        },
+        {
+          "time": "4:15",
+          "dur": "15'",
+          "cat": "descanso",
+          "title": "Descanso"
+        },
+        {
+          "time": "4:30",
+          "dur": "30'",
+          "cat": "kahoot",
+          "title": "4 · Cierre D1",
+          "contenido": "Kahoot 1 (buyer persona e inbound) + recap.",
+          "links": [
+            {
+              "label": "Kahoot 1",
+              "href": "tools/kahoot.html",
+              "kind": "kahoot"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "d2",
+      "dia": "Día 2",
+      "fecha": "Viernes 12/09",
+      "franja": "5 h",
+      "lema": "Qué busca y qué le atrae",
+      "bloques": [
+        {
+          "time": "0:00",
+          "dur": "15'",
+          "cat": "framing",
+          "title": "5 · Recap",
+          "contenido": "Dónde quedó la matriz de momentos.",
+          "links": [
+            {
+              "label": "Reabrir la matriz",
+              "href": "tools/buyer-persona.html#matriz",
+              "kind": "tool"
+            }
+          ]
+        },
+        {
+          "time": "0:15",
+          "dur": "60'",
+          "cat": "deck",
+          "title": "6 · SEO Content",
+          "contenido": "Del listado de keywords al cluster temático y la intención de búsqueda. GEO e IA.",
+          "block": "m2",
+          "links": [
+            {
+              "label": "Abrir M2",
+              "href": "decks/m2.html",
+              "kind": "deck"
+            }
+          ]
+        },
+        {
+          "time": "1:15",
+          "dur": "15'",
+          "cat": "descanso",
+          "title": "Descanso"
+        },
+        {
+          "time": "1:30",
+          "dur": "75'",
+          "cat": "tool",
+          "title": "7 · Clusters",
+          "contenido": "Importar el export de Ahrefs en vivo, toggle crudo/normalizado y agrupación temática.",
+          "block": "m2",
+          "links": [
+            {
+              "label": "Práctica: keywords",
+              "href": "tools/keywords.html",
+              "kind": "tool"
+            }
+          ]
+        },
+        {
+          "time": "2:45",
+          "dur": "60'",
+          "cat": "tool",
+          "title": "8 · Las 10 keywords",
+          "contenido": "Selección y justificación del listado que exige el caso. Export.",
+          "block": "m2",
+          "links": [
+            {
+              "label": "Selección final",
+              "href": "tools/keywords.html#seleccion",
+              "kind": "tool"
+            }
+          ]
+        },
+        {
+          "time": "3:45",
+          "dur": "15'",
+          "cat": "descanso",
+          "title": "Descanso"
+        },
+        {
+          "time": "4:00",
+          "dur": "45'",
+          "cat": "deck",
+          "title": "9 · Atracción",
+          "contenido": "Blog, social y territorio de marca. Copies, snippets y descriptivos.",
+          "block": "m2",
+          "links": [
+            {
+              "label": "Abrir M2",
+              "href": "decks/m2.html",
+              "kind": "deck"
+            }
+          ]
+        },
+        {
+          "time": "4:45",
+          "dur": "15'",
+          "cat": "framing",
+          "title": "10 · Encargo entre sesiones",
+          "contenido": "Qué traer el día 25 y cómo guardar el trabajo (export/import).",
+          "links": [
+            {
+              "label": "Ver el encargo",
+              "href": "index.html#encargo",
+              "kind": "framing"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "d3",
+      "dia": "Día 3",
+      "fecha": "Jueves 25/09",
+      "franja": "5 h",
+      "lema": "Cómo lo capto",
+      "bloques": [
+        {
+          "time": "0:00",
+          "dur": "30'",
+          "cat": "framing",
+          "title": "11 · Check-in",
+          "contenido": "Proyectar dos o tres encargos y reabrirlos con import.",
+          "links": [
+            {
+              "label": "Reimportar buyer persona",
+              "href": "tools/buyer-persona.html",
+              "kind": "tool"
+            },
+            {
+              "label": "Reimportar keywords",
+              "href": "tools/keywords.html",
+              "kind": "tool"
+            }
+          ]
+        },
+        {
+          "time": "0:30",
+          "dur": "60'",
+          "cat": "deck",
+          "title": "12 · PPC y mix",
+          "contenido": "Google/Meta/TikTok, post promocionado, segmentación por contexto, influencers.",
+          "block": "m2",
+          "links": [
+            {
+              "label": "Abrir M2",
+              "href": "decks/m2.html",
+              "kind": "deck"
+            }
+          ]
+        },
+        {
+          "time": "1:30",
+          "dur": "60'",
+          "cat": "tool",
+          "title": "13 · Mix de captación",
+          "contenido": "Repartir presupuesto y ver el funnel recalcularse. CPL resultante.",
+          "block": "m2",
+          "links": [
+            {
+              "label": "Práctica: funnel",
+              "href": "tools/funnel.html",
+              "kind": "tool"
+            }
+          ]
+        },
+        {
+          "time": "2:30",
+          "dur": "15'",
+          "cat": "descanso",
+          "title": "Descanso"
+        },
+        {
+          "time": "2:45",
+          "dur": "60'",
+          "cat": "tool",
+          "title": "14 · Conversión",
+          "contenido": "CTA → lead magnet → landing → formulario. Cadena completa.",
+          "block": "m2",
+          "links": [
+            {
+              "label": "Cadena de conversión",
+              "href": "tools/funnel.html#conversion",
+              "kind": "tool"
+            }
+          ]
+        },
+        {
+          "time": "3:45",
+          "dur": "15'",
+          "cat": "descanso",
+          "title": "Descanso"
+        },
+        {
+          "time": "4:00",
+          "dur": "45'",
+          "cat": "deck",
+          "title": "15 · Email y legal",
+          "contenido": "Formatos, welcome y transaccionales, opt-in doble, RGPD, entregabilidad.",
+          "block": "m3",
+          "links": [
+            {
+              "label": "Abrir M3",
+              "href": "decks/m3.html",
+              "kind": "deck"
+            }
+          ]
+        },
+        {
+          "time": "4:45",
+          "dur": "15'",
+          "cat": "kahoot",
+          "title": "16 · Cierre D3",
+          "contenido": "Kahoot 2 (atracción y conversión).",
+          "links": [
+            {
+              "label": "Kahoot 2",
+              "href": "tools/kahoot.html",
+              "kind": "kahoot"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "d4",
+      "dia": "Día 4",
+      "fecha": "Viernes 26/09",
+      "franja": "5 h",
+      "lema": "Cómo lo maduro y lo defiendo",
+      "bloques": [
+        {
+          "time": "0:00",
+          "dur": "60'",
+          "cat": "deck",
+          "title": "17 · Scoring y postventa",
+          "contenido": "Lead scoring continuo. De cliente a promotor, UGC y KPIs del funnel.",
+          "block": "m3",
+          "links": [
+            {
+              "label": "Abrir M3",
+              "href": "decks/m3.html",
+              "kind": "deck"
+            },
+            {
+              "label": "Práctica: lead scoring",
+              "href": "tools/nurturing.html",
+              "kind": "tool"
+            }
+          ]
+        },
+        {
+          "time": "1:00",
+          "dur": "60'",
+          "cat": "tool",
+          "title": "18 · Nurturing",
+          "contenido": "Workflow de los 90 días posteriores al vuelo de vuelta.",
+          "block": "m3",
+          "links": [
+            {
+              "label": "Constructor de workflow",
+              "href": "tools/nurturing.html#workflow",
+              "kind": "tool"
+            }
+          ]
+        },
+        {
+          "time": "2:00",
+          "dur": "15'",
+          "cat": "descanso",
+          "title": "Descanso"
+        },
+        {
+          "time": "2:15",
+          "dur": "45'",
+          "cat": "tool",
+          "title": "19 · Calendario",
+          "contenido": "Calendario anual y cronograma por plataforma, con las dos estacionalidades.",
+          "block": "m3",
+          "links": [
+            {
+              "label": "Práctica: calendario",
+              "href": "tools/calendario.html",
+              "kind": "tool"
+            }
+          ]
+        },
+        {
+          "time": "3:00",
+          "dur": "30'",
+          "cat": "tool",
+          "title": "20 · Creatividades",
+          "contenido": "Briefs de las 5 piezas que pide el caso.",
+          "block": "m3",
+          "links": [
+            {
+              "label": "Briefs de creatividad",
+              "href": "tools/calendario.html#briefs",
+              "kind": "tool"
+            }
+          ]
+        },
+        {
+          "time": "3:30",
+          "dur": "15'",
+          "cat": "kahoot",
+          "title": "21 · Kahoot 3",
+          "contenido": "Nurturing, email y medición.",
+          "links": [
+            {
+              "label": "Kahoot 3",
+              "href": "tools/kahoot.html",
+              "kind": "kahoot"
+            }
+          ]
+        },
+        {
+          "time": "3:45",
+          "dur": "60'",
+          "cat": "pitch",
+          "title": "22 · Pitch",
+          "contenido": "5 equipos, 5 mandatos, Comité de Dirección puntuando.",
+          "links": [
+            {
+              "label": "Sala de pitch",
+              "href": "tools/pitch.html",
+              "kind": "pitch"
+            }
+          ]
+        },
+        {
+          "time": "4:45",
+          "dur": "15'",
+          "cat": "framing",
+          "title": "23 · Cierre",
+          "contenido": "Qué se llevan y qué les falta para el entregable."
+        }
+      ]
+    }
+  ],
+  "hueco": {
+    "entre": [
+      "d2",
+      "d3"
+    ],
+    "dias": 13,
+    "titulo": "Trece días de hueco",
+    "texto": "Entre el 12 y el 25 de septiembre no hay clase. El estado de las herramientas vive en memoria: lo que no se exporta, se pierde. Cada equipo cierra sus dos buyer personas y sus 10 keywords, y trae el JSON exportado para reabrirlo el día 25."
+  }
+}

@@ -1,0 +1,107 @@
+/* =========================================================================
+   buyer-persona.css — Dos arquetipos + clasificador de momentos en matriz 3×3.
+   ========================================================================= */
+
+/* ------------------------------------------------------- Dos arquetipos */
+.personas { display: grid; gap: var(--sp-5); grid-template-columns: 1fr; }
+@media (min-width: 900px) { .personas { grid-template-columns: 1fr 1fr; gap: var(--sp-6); } }
+
+.persona {
+  border: 1px solid var(--c-line); border-top: 5px solid var(--c-accent-blue);
+  border-radius: var(--radius); padding: var(--sp-5);
+  display: grid; gap: var(--sp-4);
+}
+.persona:nth-child(2) { border-top-color: var(--c-accent); }
+.persona__head { display: flex; flex-wrap: wrap; gap: var(--sp-3); align-items: center; justify-content: space-between; }
+.persona__tag {
+  font-family: var(--font-display); text-transform: uppercase; letter-spacing: .12em;
+  font-size: .78rem; color: var(--c-accent-blue);
+}
+.persona:nth-child(2) .persona__tag { color: var(--c-m2-dark); }
+.persona__contador { font-size: .78rem; color: var(--c-ink-soft); font-weight: 600; }
+.persona__contador[data-ok="si"] { color: var(--c-m2-dark); }
+
+/* ------------------------------------------------------ Bandeja de momentos */
+.momentos-layout { display: grid; gap: var(--sp-5); grid-template-columns: 1fr; align-items: start; }
+@media (min-width: 1100px) { .momentos-layout { grid-template-columns: 300px 1fr; gap: var(--sp-6); } }
+
+.bandeja {
+  border: 1px solid var(--c-line); border-radius: var(--radius);
+  background: var(--c-surface); padding: var(--sp-4);
+  max-height: 60vh; display: flex; flex-direction: column;
+}
+/* Solo se queda fija cuando hay dos columnas: apilada ocuparía toda la pantalla. */
+@media (min-width: 1100px) { .bandeja { position: sticky; top: 72px; max-height: 70vh; } }
+.bandeja__head { display: flex; justify-content: space-between; align-items: baseline; gap: var(--sp-3); margin-bottom: var(--sp-3); }
+.bandeja__title { font-family: var(--font-display); font-size: 1.2rem; color: var(--c-ink); margin: 0; }
+.bandeja__n { font-size: .8rem; color: var(--c-ink-soft); font-weight: 600; }
+.bandeja__list { overflow-y: auto; display: flex; flex-direction: column; gap: var(--sp-2); padding-right: 2px; }
+.bandeja__vacia { font-size: .88rem; color: var(--c-ink-soft); font-style: italic; padding: var(--sp-4) 0; }
+
+/* Tarjeta de momento */
+.momento {
+  display: block; width: 100%; text-align: left;
+  padding: .55em .7em; border: 1px solid var(--c-line); border-radius: var(--radius-sm);
+  background: #fff; font-size: .82rem; line-height: 1.35; color: var(--c-body);
+  cursor: grab; transition: border-color .15s, box-shadow .15s, transform .1s;
+}
+.momento:hover { border-color: var(--c-accent-blue); box-shadow: var(--shadow-sm); }
+.momento.is-sel { border-color: var(--c-accent-blue); box-shadow: 0 0 0 3px var(--c-accent-soft); }
+.momento.is-drag { opacity: .45; }
+.momento__quitar {
+  float: right; margin-left: .4em; border: none; background: transparent; cursor: pointer;
+  color: var(--c-ink-soft); font-size: 1rem; line-height: 1; padding: 0 .2em;
+}
+.momento__quitar:hover { color: #b3261e; }
+
+/* ------------------------------------------------------------- Matriz 3×3 */
+.matriz { display: grid; grid-template-columns: 108px repeat(3, minmax(0, 1fr)); gap: var(--sp-2); min-width: 640px; }
+.matriz__esquina { }
+.matriz__colhead, .matriz__rowhead {
+  display: flex; flex-direction: column; justify-content: center;
+  padding: var(--sp-2) var(--sp-3); border-radius: var(--radius-sm);
+  font-family: var(--font-display); color: #fff;
+}
+.matriz__colhead { text-align: center; align-items: center; }
+.matriz__colhead b, .matriz__rowhead b { font-size: 1.15rem; letter-spacing: .04em; }
+.matriz__colhead small, .matriz__rowhead small { font-family: var(--font-body); font-size: .68rem; opacity: .85; font-weight: 400; }
+.matriz__colhead--tofu { background: var(--c-tofu); }
+.matriz__colhead--mofu { background: var(--c-mofu); }
+.matriz__colhead--bofu { background: var(--c-bofu); }
+.matriz__rowhead { background: var(--c-ink); }
+
+/* Celda */
+.celda {
+  min-height: 118px; padding: var(--sp-2);
+  border: 2px dashed var(--c-line); border-radius: var(--radius-sm);
+  background: #fff; display: flex; flex-direction: column; gap: 4px;
+  transition: border-color .15s, background .15s;
+}
+.celda.is-over { border-color: var(--c-accent-blue); background: var(--c-accent-soft); }
+.celda[data-n="0"] { background: repeating-linear-gradient(45deg, #fff, #fff 8px, #fafbfe 8px, #fafbfe 16px); }
+.celda.is-target { border-color: var(--c-accent-blue); border-style: solid; }
+.celda__n {
+  align-self: flex-end; font-size: .7rem; font-weight: 700; color: var(--c-ink-soft);
+  background: var(--c-surface); border-radius: var(--radius-pill); padding: .1em .55em;
+}
+.celda[data-n="0"] .celda__n { color: #b3261e; }
+.celda .momento { font-size: .74rem; padding: .4em .5em; }
+
+/* ------------------------------------------- Payoff: matriz proyectable */
+.payoff-matriz { display: grid; grid-template-columns: 120px repeat(3, 1fr); gap: 10px; }
+.payoff-matriz__h {
+  font-family: var(--font-display); font-size: 1.3rem; color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  padding: .5em; border-radius: var(--radius-sm); background: rgba(255, 255, 255, .16);
+}
+.payoff-matriz__h--row { justify-content: flex-start; font-size: 1.05rem; }
+.payoff-celda {
+  aspect-ratio: 2.4 / 1;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  border-radius: var(--radius-sm); background: rgba(255, 255, 255, .10);
+  border: 2px solid transparent;
+}
+.payoff-celda b { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3.2rem); line-height: 1; color: #fff; }
+.payoff-celda small { font-size: .7rem; color: var(--c-white-soft); }
+.payoff-celda[data-n="0"] { border-color: var(--c-accent); border-style: dashed; background: rgba(10, 228, 195, .08); }
+.payoff-celda[data-n="0"] b { color: var(--c-accent); }

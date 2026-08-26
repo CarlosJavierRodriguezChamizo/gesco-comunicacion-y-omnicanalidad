@@ -1,0 +1,87 @@
+/* =========================================================================
+   keywords.css — Importador de Ahrefs, tabla de etiquetado y treemap.
+   ========================================================================= */
+
+/* ------------------------------------------------------------ Importador */
+.importador {
+  display: grid; gap: var(--sp-4);
+  border: 1px solid var(--c-line); border-left: 5px solid var(--c-accent-blue);
+  border-radius: var(--radius); background: var(--c-surface); padding: var(--sp-5);
+}
+.importador h2 { font-size: 1.5rem; margin: 0; }
+.importador__lead { margin: 0; font-size: .95rem; color: var(--c-ink-soft); max-width: 74ch; }
+.importador__cols { display: grid; gap: var(--sp-4); }
+@media (min-width: 860px) { .importador__cols { grid-template-columns: 1fr 1fr; } }
+.importador textarea {
+  width: 100%; min-height: 7em; padding: .6em .7em;
+  border: 1px solid var(--c-line); border-radius: var(--radius-sm);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .78rem;
+  background: #fff; resize: vertical;
+}
+.importador__estado { font-size: .9rem; min-height: 1.4em; }
+.importador__estado[data-tipo="ok"] { color: var(--c-m2-dark); font-weight: 600; }
+.importador__estado[data-tipo="error"] { color: #b3261e; font-weight: 600; }
+.importador__cols .dropzone { min-height: 7em; }
+
+/* ------------------------------------------------------- Toggle crudo/norm */
+.toggle {
+  display: inline-flex; border: 1.5px solid var(--c-accent-blue);
+  border-radius: var(--radius-pill); overflow: hidden;
+}
+.toggle button {
+  border: none; background: transparent; color: var(--c-accent-blue);
+  padding: .45em 1.1em; font-size: .85rem; font-weight: 600; cursor: pointer;
+}
+.toggle button[aria-pressed="true"] { background: var(--c-accent-blue); color: #fff; }
+
+/* ------------------------------------------------------------ Tabla de kw */
+.kw-tabla-wrap { max-height: 62vh; overflow: auto; border: 1px solid var(--c-line); border-radius: var(--radius); }
+.kw-tabla { width: 100%; border-collapse: collapse; font-size: .86rem; }
+.kw-tabla th, .kw-tabla td { padding: .45em .55em; border-bottom: 1px solid var(--c-line); text-align: left; vertical-align: middle; }
+.kw-tabla thead th {
+  position: sticky; top: 0; z-index: 2; background: var(--c-surface);
+  font-size: .72rem; text-transform: uppercase; letter-spacing: .04em; color: var(--c-ink-soft);
+}
+.kw-tabla tbody tr:hover { background: var(--c-accent-soft); }
+.kw-tabla tbody tr.is-sel { background: rgba(0, 71, 233, .07); }
+.kw-tabla td.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.kw-tabla td.num[data-vacio="si"] { color: var(--c-ink-soft); }
+.kw-tabla select, .kw-tabla input[type="text"] {
+  width: 100%; min-width: 90px; padding: .3em .4em; font-size: .8rem;
+  border: 1px solid var(--c-line); border-radius: 6px; background: #fff;
+}
+.kw-tabla .kw-term { font-weight: 600; color: var(--c-ink); }
+.kw-tabla .kw-term small { display: block; font-weight: 400; color: var(--c-ink-soft); font-size: .76rem; }
+.kw-idioma {
+  display: inline-block; font-size: .66rem; font-weight: 700; letter-spacing: .05em;
+  text-transform: uppercase; color: var(--c-ink-soft);
+  border: 1px solid var(--c-line); border-radius: 4px; padding: .05em .35em;
+}
+.kw-check { width: 18px; height: 18px; accent-color: var(--c-accent-blue); cursor: pointer; }
+
+/* ------------------------------------------------------ Selección final */
+.seleccion { display: grid; gap: var(--sp-3); }
+.sel-item {
+  display: grid; grid-template-columns: 1.6fr 2.4fr auto; gap: var(--sp-3); align-items: start;
+  border: 1px solid var(--c-line); border-left: 4px solid var(--c-accent-blue);
+  border-radius: var(--radius-sm); padding: var(--sp-3) var(--sp-4); background: #fff;
+}
+@media (max-width: 760px) { .sel-item { grid-template-columns: 1fr; } }
+.sel-item[data-justificada="no"] { border-left-color: #b3261e; }
+.sel-item__kw { font-weight: 600; color: var(--c-ink); }
+.sel-item__kw small { display: block; font-weight: 400; color: var(--c-ink-soft); font-size: .78rem; }
+.sel-item textarea {
+  width: 100%; min-height: 3.2em; padding: .45em .6em; font-size: .86rem;
+  border: 1px solid var(--c-line); border-radius: 6px; resize: vertical;
+}
+.sel-vacia { color: var(--c-ink-soft); font-style: italic; }
+
+/* -------------------------------------------------- Payoff: treemap SVG */
+.treemap { width: 100%; height: auto; display: block; }
+.treemap rect { stroke: var(--c-bg-blue); stroke-width: 2; transition: opacity .2s; }
+.treemap text { fill: #fff; font-family: var(--font-body); pointer-events: none; }
+.treemap .tm-kw { font-weight: 600; }
+.treemap .tm-vol { opacity: .8; }
+.treemap-leyenda { display: flex; flex-wrap: wrap; gap: var(--sp-4); margin-top: var(--sp-4); }
+.treemap-leyenda span { display: inline-flex; align-items: center; gap: .5em; font-size: .88rem; color: var(--c-white-soft); }
+.treemap-leyenda i { width: 16px; height: 16px; border-radius: 4px; display: inline-block; }

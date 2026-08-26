@@ -1,0 +1,123 @@
+/* =========================================================================
+   nurturing.css — (a) Lead scoring con criterios y pesos.
+                   (b) Constructor de workflow sobre los 90 días post-viaje.
+   ========================================================================= */
+
+/* --------------------------------------------------------- Lead scoring */
+.scoring { display: grid; gap: var(--sp-6); grid-template-columns: 1fr; align-items: start; }
+@media (min-width: 1080px) { .scoring { grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr); } }
+
+/* Criterios y pesos */
+.criterio {
+  display: grid; grid-template-columns: 1fr 90px auto; gap: var(--sp-3); align-items: center;
+  border: 1px solid var(--c-line); border-radius: var(--radius-sm);
+  padding: var(--sp-3) var(--sp-4); background: #fff; margin-bottom: var(--sp-2);
+}
+.criterio__cat {
+  font-size: .62rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em;
+  border-radius: 4px; padding: .1em .4em; margin-right: .4em;
+}
+.criterio__cat[data-c="perfil"] { background: rgba(0, 71, 233, .12); color: var(--c-m1); }
+.criterio__cat[data-c="comportamiento"] { background: var(--c-accent-soft); color: var(--c-m2-dark); }
+.criterio__cat[data-c="origen"] { background: rgba(106, 44, 245, .12); color: var(--c-mofu); }
+.criterio input[type="text"] { width: 100%; border: none; padding: .2em 0; font-size: .92rem; font-weight: 600; color: var(--c-ink); }
+.criterio input[type="text"]:focus-visible { outline: 2px solid var(--c-accent-blue); }
+.criterio input[type="number"] { width: 100%; padding: .3em .4em; border: 1px solid var(--c-line); border-radius: 6px; text-align: right; }
+.criterio button { border: none; background: transparent; cursor: pointer; color: var(--c-ink-soft); font-size: 1.1rem; }
+.criterio button:hover { color: #b3261e; }
+
+/* Escala resultante */
+.escala {
+  border: 1px solid var(--c-line); border-radius: var(--radius);
+  background: var(--c-ink); color: #fff; padding: var(--sp-5);
+}
+.escala h3 { color: #fff; font-size: 1.3rem; margin: 0 0 var(--sp-2); }
+.escala__lead { font-size: .84rem; color: var(--c-white-soft); margin: 0 0 var(--sp-4); }
+@media (min-width: 1080px) { .escala { position: sticky; top: 72px; } }
+.escala__barra { display: flex; height: 12px; border-radius: 999px; overflow: hidden; background: rgba(255, 255, 255, .12); }
+.escala__barra i { display: block; height: 100%; }
+.escala__tramos { display: flex; justify-content: space-between; font-size: .7rem; color: var(--c-white-soft); margin-top: 6px; }
+
+/* Leads arrastrables */
+.leads { display: grid; gap: 6px; margin-top: var(--sp-5); max-height: 46vh; overflow-y: auto; }
+.lead-fila {
+  display: grid; grid-template-columns: 1fr auto; gap: var(--sp-3); align-items: center;
+  background: rgba(255, 255, 255, .08); border: 1px solid var(--c-line-blue);
+  border-radius: var(--radius-sm); padding: .5em .7em; font-size: .8rem;
+}
+.lead-fila__nombre { color: #fff; font-weight: 600; }
+.lead-fila__rasgos { display: block; color: var(--c-white-soft); font-size: .72rem; font-weight: 400; }
+.lead-fila__score { font-family: var(--font-display); font-size: 1.5rem; line-height: 1; }
+.lead-fila[data-nivel="frio"] .lead-fila__score { color: rgba(255, 255, 255, .55); }
+.lead-fila[data-nivel="templado"] .lead-fila__score { color: #ffb02e; }
+.lead-fila[data-nivel="caliente"] .lead-fila__score { color: var(--c-accent); }
+.lead-fila__nivel { font-size: .62rem; text-transform: uppercase; letter-spacing: .06em; display: block; text-align: right; color: var(--c-white-soft); }
+
+/* Rasgos marcables de cada lead */
+.lead-rasgos { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 4px; }
+.lead-rasgo {
+  font-size: .64rem; border: 1px solid var(--c-line-blue); border-radius: 999px;
+  padding: .1em .5em; color: var(--c-white-soft); background: transparent; cursor: pointer;
+}
+.lead-rasgo[aria-pressed="true"] { background: var(--c-accent); color: var(--c-ink); border-color: var(--c-accent); font-weight: 700; }
+
+/* ------------------------------------------------------------- Workflow */
+.wf-toolbar { display: flex; flex-wrap: wrap; gap: var(--sp-2); margin-bottom: var(--sp-4); }
+
+.wf-canvas {
+  border: 1px solid var(--c-line); border-radius: var(--radius);
+  background: var(--c-surface); padding: var(--sp-5); min-height: 200px;
+}
+.wf-lista { display: flex; flex-direction: column; gap: 0; }
+.wf-nodo {
+  display: grid; grid-template-columns: 42px 1fr auto; gap: var(--sp-3); align-items: start;
+  background: #fff; border: 1px solid var(--c-line); border-radius: var(--radius);
+  padding: var(--sp-3) var(--sp-4); position: relative;
+}
+.wf-nodo--email { border-left: 4px solid var(--c-accent-blue); }
+.wf-nodo--espera { border-left: 4px solid #b26a00; }
+.wf-nodo--condicion { border-left: 4px solid var(--c-mofu); }
+.wf-conector { height: 26px; width: 2px; background: var(--c-line); margin-left: 21px; position: relative; }
+.wf-conector::after {
+  content: "▼"; position: absolute; bottom: -4px; left: -5px;
+  font-size: 10px; color: var(--c-line);
+}
+.wf-nodo__ico {
+  width: 34px; height: 34px; border-radius: 10px; display: grid; place-items: center;
+  font-size: 1rem; background: var(--c-surface);
+}
+.wf-nodo__cuerpo { display: grid; gap: var(--sp-2); min-width: 0; }
+.wf-nodo__tipo {
+  font-size: .64rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--c-ink-soft);
+}
+.wf-nodo__dia { font-family: var(--font-display); font-size: .95rem; color: var(--c-accent-blue); }
+.wf-nodo input[type="text"], .wf-nodo select, .wf-nodo input[type="number"] {
+  width: 100%; padding: .35em .5em; border: 1px solid var(--c-line); border-radius: 6px; font-size: .85rem; background: #fff;
+}
+.wf-nodo__campos { display: grid; gap: var(--sp-2); }
+@media (min-width: 700px) { .wf-nodo__campos--2 { grid-template-columns: 1fr 1fr; } }
+.wf-nodo__acciones { display: flex; flex-direction: column; gap: 2px; }
+.wf-nodo__acciones button {
+  border: 1px solid var(--c-line); background: #fff; border-radius: 6px; cursor: pointer;
+  width: 26px; height: 22px; font-size: .7rem; color: var(--c-ink-soft); line-height: 1;
+}
+.wf-nodo__acciones button:hover { border-color: var(--c-accent-blue); color: var(--c-accent-blue); }
+.wf-vacio { color: var(--c-ink-soft); font-style: italic; }
+
+/* Regla de los 90 días */
+.wf-regla { margin-top: var(--sp-5); }
+.wf-regla__linea { position: relative; height: 46px; border-radius: var(--radius-sm); background: linear-gradient(90deg, var(--c-accent) 0%, var(--c-accent-blue) 55%, var(--c-ink) 100%); }
+.wf-regla__marca {
+  position: absolute; top: -6px; width: 2px; height: 58px; background: #fff;
+  box-shadow: 0 0 0 1px rgba(0, 19, 63, .3);
+}
+.wf-regla__marca span {
+  position: absolute; top: -18px; left: 50%; transform: translateX(-50%);
+  font-size: .66rem; font-weight: 700; color: var(--c-ink); white-space: nowrap;
+}
+.wf-regla__eje { display: flex; justify-content: space-between; font-size: .72rem; color: var(--c-ink-soft); margin-top: var(--sp-2); }
+
+/* --------------------------------------------- Payoff: workflow en SVG */
+.wf-svg { width: 100%; height: auto; display: block; background: transparent; }
+.wf-svg text { font-family: var(--font-body); }
+.wf-svg .wf-t { font-family: var(--font-display); }

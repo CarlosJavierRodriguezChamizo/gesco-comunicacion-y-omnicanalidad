@@ -1,0 +1,179 @@
+/* =========================================================================
+   hub.css — Estilos del Hub / Escaleta viva (index.html).
+   ========================================================================= */
+
+/* ------------------------------------------------------------- Hero */
+.hero__eyebrow {
+  font-family: var(--font-display); text-transform: uppercase; letter-spacing: .14em;
+  color: var(--c-accent-blue); font-size: .9rem; margin: 0 0 var(--sp-3);
+}
+.hero__title { font-size: clamp(2.6rem, 7vw, 5.4rem); text-transform: uppercase; margin-bottom: .12em; }
+.hero__subtitle { font-size: clamp(1.05rem, 2vw, 1.5rem); color: var(--c-ink-soft); margin: 0; max-width: 46ch; }
+.hero__acciones { display: flex; flex-wrap: wrap; gap: var(--sp-3); margin-top: var(--sp-6); }
+
+/* --------------------------------------------- Banda azul con el gancho */
+.gancho { display: grid; gap: var(--sp-6); }
+.gancho__kpis { display: grid; gap: var(--sp-6); grid-template-columns: 1fr; }
+@media (min-width: 760px) { .gancho__kpis { grid-template-columns: repeat(2, max-content); gap: var(--sp-8); } }
+.gancho__q {
+  font-family: var(--font-display); font-size: clamp(1.5rem, 3.4vw, 2.6rem);
+  line-height: 1.06; margin: 0; max-width: 26ch;
+}
+
+/* ----------------------------------------- Cabecera de escaleta + reloj */
+.escaleta__head {
+  display: flex; flex-wrap: wrap; gap: var(--sp-5);
+  align-items: flex-start; justify-content: space-between;
+}
+.escaleta__head > div { max-width: 62ch; }
+.reloj {
+  display: flex; flex-direction: column; align-items: flex-end;
+  border-left: 4px solid var(--c-accent); padding-left: var(--sp-4);
+}
+.reloj__num { font-family: var(--font-display); font-size: clamp(2.4rem, 5vw, 3.6rem); line-height: .95; color: var(--c-ink); }
+.reloj__label { font-size: .82rem; color: var(--c-ink-soft); }
+
+/* ----------------------------------------------------- Leyenda de tipos */
+.legend { display: flex; flex-wrap: wrap; gap: var(--sp-3); margin-top: var(--sp-5); }
+
+/* --------------------------------------------------------- Días (2 col) */
+.days { display: grid; gap: var(--sp-6); grid-template-columns: 1fr; }
+@media (min-width: 980px) { .days { grid-template-columns: 1fr 1fr; gap: var(--sp-7); } }
+
+.day__head { padding-bottom: var(--sp-3); border-bottom: 2px solid var(--c-line); margin-bottom: var(--sp-5); }
+.day__name { display: flex; align-items: baseline; gap: var(--sp-3); flex-wrap: wrap; margin: 0; font-size: clamp(1.6rem, 3vw, 2.2rem); }
+.day__franja { font-family: var(--font-body); font-weight: 600; color: var(--c-accent-blue); font-size: 1.05rem; }
+.day__lema { color: var(--c-ink-soft); margin: var(--sp-2) 0 0; }
+.day__list { display: flex; flex-direction: column; gap: var(--sp-3); }
+
+/* --------------------------------------------------------- Item agenda */
+.agenda-item {
+  display: grid; grid-template-columns: 96px 1fr; gap: var(--sp-4);
+  padding: var(--sp-4);
+  border: 1px solid var(--c-line);
+  border-left: 4px solid var(--c-line);
+  border-radius: var(--radius-sm);
+  background: var(--c-bg);
+  transition: box-shadow .15s, border-color .15s, opacity .15s;
+}
+.agenda-item:hover { box-shadow: var(--shadow-sm); }
+@media (max-width: 520px) { .agenda-item { grid-template-columns: 1fr; } }
+
+.agenda-item__time { display: flex; flex-direction: column; gap: var(--sp-2); align-items: flex-start; }
+.agenda-item__hour { font-family: var(--font-display); font-size: 1.5rem; color: var(--c-ink); line-height: 1; }
+.agenda-item__dur { font-size: .75rem; color: var(--c-ink-soft); }
+
+.agenda-item__main { display: flex; flex-direction: column; gap: var(--sp-2); min-width: 0; }
+.agenda-item__head { display: flex; flex-wrap: wrap; gap: var(--sp-2); align-items: center; }
+.agenda-item__title { font-family: var(--font-body); font-weight: 600; color: var(--c-ink); font-size: 1.05rem; margin: 0; }
+.agenda-item__note { color: var(--c-ink-soft); font-size: .9rem; margin: 0; }
+
+/* Enlaces de acción — pills compactas */
+.agenda-links { display: flex; flex-wrap: wrap; gap: var(--sp-2); margin-top: var(--sp-1); }
+.agenda-link {
+  display: inline-flex; align-items: center; gap: var(--sp-2);
+  padding: .35em .8em; border-radius: var(--radius-pill);
+  font-size: .82rem; font-weight: 600; text-decoration: none;
+  border: 1.5px solid var(--c-line); color: var(--c-ink); background: var(--c-bg);
+  transition: background .15s, color .15s, border-color .15s, transform .15s;
+}
+.agenda-link::before { content: "→"; opacity: .55; }
+.agenda-link:hover { transform: translateY(-1px); }
+.agenda-link--deck    { border-color: var(--c-m1); color: var(--c-m1); }
+.agenda-link--deck:hover    { background: var(--c-m1); color: #fff; }
+.agenda-link--tool    { border-color: var(--c-m2-dark); color: var(--c-m2-dark); }
+.agenda-link--tool:hover    { background: var(--c-m2-dark); color: #fff; }
+.agenda-link--kahoot  { border-color: #b26a00; color: #b26a00; }
+.agenda-link--kahoot:hover  { background: #b26a00; color: #fff; }
+.agenda-link--pitch   { border-color: var(--c-ink); color: var(--c-ink); }
+.agenda-link--pitch:hover   { background: var(--c-ink); color: #fff; }
+.agenda-link--framing { border-color: var(--c-ink-soft); color: var(--c-ink-soft); }
+.agenda-link--framing:hover { background: var(--c-ink); color: #fff; border-color: var(--c-ink); }
+
+/* ----------------------------------------------- Chip de categoría (tipo) */
+.cat {
+  display: inline-flex; align-items: center; gap: .4em;
+  padding: .26em .7em; border-radius: var(--radius-pill);
+  font-size: .72rem; font-weight: 700; letter-spacing: .03em; text-transform: uppercase;
+  color: #fff; background: var(--c-ink);
+}
+/* Scoped a `.cat` para no afectar al <article class="agenda-item cat--*">,
+   que reutiliza estas clases solo para el color del borde izquierdo. */
+.cat.cat--deck    { background: var(--c-m1); }
+.cat.cat--tool    { background: var(--c-m2-dark); }
+.cat.cat--kahoot  { background: #b26a00; }
+.cat.cat--pitch   { background: var(--c-ink); }
+.cat.cat--framing { background: #4a5a7d; }
+.cat.cat--rest    { background: #6b7280; }
+
+/* Cinta de color del borde izquierdo por categoría (estado pendiente).
+   Va ANTES de las reglas de [data-status] para que el estado tenga prioridad. */
+.agenda-item.cat--deck    { border-left-color: var(--c-m1); }
+.agenda-item.cat--tool    { border-left-color: var(--c-m2-dark); }
+.agenda-item.cat--kahoot  { border-left-color: #b26a00; }
+.agenda-item.cat--pitch   { border-left-color: var(--c-ink); }
+.agenda-item.cat--framing { border-left-color: #4a5a7d; }
+.agenda-item.cat--rest    { border-left-color: #6b7280; }
+
+/* ------------------------------------------------- Indicador de estado */
+.status {
+  display: inline-flex; align-items: center; gap: .35em;
+  padding: .3em .55em; border-radius: var(--radius-pill);
+  font-size: .7rem; font-weight: 700; white-space: nowrap;
+  border: 1.5px solid var(--c-line); background: var(--c-bg); color: var(--c-ink-soft);
+  cursor: pointer; line-height: 1; max-width: 100%;
+}
+.status__dot { width: .7em; height: .7em; border-radius: 50%; background: currentColor; flex: none; }
+.status:hover { border-color: var(--c-accent-blue); }
+.status[data-status="encurso"] { color: var(--c-m2-dark); border-color: var(--c-m2-dark); background: var(--c-accent-soft); }
+.status[data-status="hecho"] { color: #fff; background: var(--c-m1); border-color: var(--c-m1); }
+
+.agenda-item[data-status="encurso"] { border-left-color: var(--c-accent); box-shadow: 0 0 0 2px var(--c-accent-soft); }
+.agenda-item[data-status="hecho"]   { border-left-color: var(--c-m1); opacity: .6; }
+.agenda-item[data-status="hecho"] .agenda-item__title { text-decoration: line-through; }
+
+/* =============================================== Separador de 13 días == */
+.hueco { background: var(--c-ink); color: #fff; padding-block: clamp(2.5rem, 6vw, 4.5rem); }
+.hueco__inner { display: grid; gap: var(--sp-6); }
+@media (min-width: 980px) {
+  .hueco__inner { grid-template-columns: 160px 1fr 1.2fr; align-items: start; gap: var(--sp-7); }
+}
+.hueco__marca { display: flex; flex-direction: column; align-items: center; gap: var(--sp-2); }
+.hueco__linea { flex: 1; min-height: 40px; width: 2px; background: var(--c-accent); opacity: .5; }
+.hueco__num { font-family: var(--font-display); font-size: 4.5rem; line-height: .9; color: var(--c-accent); }
+.hueco__dias { font-size: .82rem; letter-spacing: .16em; text-transform: uppercase; color: var(--c-white-soft); }
+.hueco h2 { color: #fff; font-size: clamp(1.8rem, 3.6vw, 2.8rem); }
+.hueco__lead { color: var(--c-white-soft); margin: 0; max-width: 44ch; }
+.hueco__encargo {
+  background: rgba(255, 255, 255, .07);
+  border: 1px solid var(--c-line-blue);
+  border-left: 4px solid var(--c-accent);
+  border-radius: var(--radius); padding: var(--sp-5);
+}
+.hueco__encargo h3 { color: #fff; font-size: 1.5rem; margin: 0 0 var(--sp-1); }
+.hueco__plazo { font-size: .8rem; letter-spacing: .1em; text-transform: uppercase; color: var(--c-accent); margin: 0 0 var(--sp-4); }
+.hueco__puntos { margin: 0 0 var(--sp-4); color: var(--c-white-soft); display: grid; gap: var(--sp-2); }
+.hueco__puntos strong { color: #fff; }
+.hueco__puntos code { background: rgba(255, 255, 255, .14); border-radius: 4px; padding: 0 .3em; }
+.hueco__como { font-size: .88rem; color: var(--c-white-soft); margin: 0 0 var(--sp-4); }
+.hueco__acciones { display: flex; flex-wrap: wrap; gap: var(--sp-3); }
+.hueco .btn--primary { background: var(--c-accent); color: var(--c-ink); border-color: var(--c-accent); }
+.hueco .btn--primary:hover { background: #08c7aa; border-color: #08c7aa; }
+.hueco :focus-visible { outline-color: var(--c-accent); }
+
+/* ============================================ Tarjetas de entregable == */
+.entregables { display: grid; gap: var(--sp-4); grid-template-columns: 1fr; margin-top: var(--sp-5); }
+@media (min-width: 700px)  { .entregables { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1050px) { .entregables { grid-template-columns: repeat(5, 1fr); } }
+.entregable {
+  display: block; text-decoration: none; color: inherit;
+  border: 1px solid var(--c-line); border-top: 4px solid var(--c-accent);
+  border-radius: var(--radius); padding: var(--sp-4);
+  transition: box-shadow .15s, transform .15s;
+}
+.entregable:hover { box-shadow: var(--shadow); transform: translateY(-2px); }
+.entregable h3 { font-size: 1.25rem; margin: 0 0 var(--sp-2); }
+.entregable p { font-size: .86rem; color: var(--c-ink-soft); margin: 0; }
+
+/* ------------------------------------------------------------- Footer */
+.hub-footer { padding: var(--sp-6) 0; color: var(--c-ink-soft); font-size: .9rem; text-align: center; }

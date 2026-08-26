@@ -1,0 +1,18 @@
+{
+  "name": "gesco-comunicacion-y-omnicanalidad",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Web docente de aula — Comunicación y Omnicanalidad (GESCO, ESIC). Bloque Inbound Marketing y Medios Digitales. Caso Alimentos España.",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^8.0.16"
+  },
+  "dependencies": {
+    "reveal.js": "^4.6.1"
+  }
+}
