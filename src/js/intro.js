@@ -4,7 +4,7 @@
    slides vacías) y luego carga la inicialización común del deck.
    ========================================================================= */
 import { escapeHtml } from "../components/_util.js";
-import { PROFESOR, REGLAS, ENTREGABLES, FUERA_DE_ALCANCE, CRITERIOS_ESIC } from "../data/contenido.js";
+import { PROFESOR, REGLAS, ENTREGABLES, FUERA_DE_ALCANCE, PUENTE_TERCER_BLOQUE, CRITERIOS_ESIC } from "../data/contenido.js";
 
 /** Escribe HTML en el hueco marcado con data-slot. */
 function slot(nombre, html) {
@@ -39,11 +39,13 @@ slot(
   }).join("")
 );
 
-/* --- 7 · Los cinco entregables --- */
+slot("puente", escapeHtml(PUENTE_TERCER_BLOQUE));
+
+/* --- 7 · Las piezas del entregable --- */
 slot(
   "entregables",
   ENTREGABLES.map(
-    (e, i) => `<div class="feat">
+    (e, i) => `<div class="feat${e.puente ? " feat--accent" : ""}">
       <span class="feat__n">0${i + 1}</span>
       <h3>${escapeHtml(e.titulo)}</h3>
       <p>${escapeHtml(e.texto)}</p>

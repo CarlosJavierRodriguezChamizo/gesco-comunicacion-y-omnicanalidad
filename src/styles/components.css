@@ -145,6 +145,7 @@
 .badge--m1 { background: var(--c-m1); color: var(--c-m1-fg); }
 .badge--m2 { background: var(--c-m2); color: var(--c-m2-fg); }
 .badge--m3 { background: var(--c-m3); color: var(--c-m3-fg); }
+.badge--m4 { background: var(--c-m4); color: var(--c-m4-fg); }
 
 /* ====================================================== StatePanel ===== */
 .statepanel {

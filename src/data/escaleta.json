@@ -2,7 +2,7 @@
   "titulo": "Inbound Marketing y Medios Digitales",
   "asignatura": "Comunicación y Omnicanalidad · GESCO · ESIC",
   "horasTotales": 20,
-  "estructuraBloque": "Bloques de 60': 15' de teoría + 15' de aplicación al caso + 30' de desarrollo del alumno.",
+  "estructuraBloque": "Bloques largos de trabajo con un único descanso por sesión: 15' de teoría, 15' de aplicación al caso y el resto, desarrollo del alumno.",
   "cats": {
     "framing": {
       "label": "Framing",
@@ -15,10 +15,6 @@
     "tool": {
       "label": "Práctica",
       "cls": "cat--tool"
-    },
-    "kahoot": {
-      "label": "Kahoot",
-      "cls": "cat--kahoot"
     },
     "pitch": {
       "label": "Pitch",
@@ -68,13 +64,13 @@
         },
         {
           "time": "1:30",
-          "dur": "15'",
+          "dur": "20'",
           "cat": "descanso",
           "title": "Descanso"
         },
         {
-          "time": "1:45",
-          "dur": "75'",
+          "time": "1:50",
+          "dur": "85'",
           "cat": "tool",
           "title": "2 · Buyer persona",
           "contenido": "Del target demográfico al buyer persona con Customer Insights. Dos arquetipos del caso.",
@@ -88,8 +84,8 @@
           ]
         },
         {
-          "time": "3:00",
-          "dur": "75'",
+          "time": "3:15",
+          "dur": "90'",
           "cat": "tool",
           "title": "3 · Mapa de momentos",
           "contenido": "TOFU / MOFU / BOFU sobre un viaje: antes, durante y después de España. Matriz 3×3.",
@@ -103,24 +99,11 @@
           ]
         },
         {
-          "time": "4:15",
+          "time": "4:45",
           "dur": "15'",
-          "cat": "descanso",
-          "title": "Descanso"
-        },
-        {
-          "time": "4:30",
-          "dur": "30'",
-          "cat": "kahoot",
+          "cat": "framing",
           "title": "4 · Cierre D1",
-          "contenido": "Kahoot 1 (buyer persona e inbound) + recap.",
-          "links": [
-            {
-              "label": "Kahoot 1",
-              "href": "tools/kahoot.html",
-              "kind": "kahoot"
-            }
-          ]
+          "contenido": "Recap de la matriz: cuántos momentos han caído en «después del viaje» y qué significa eso."
         }
       ]
     },
@@ -162,13 +145,13 @@
         },
         {
           "time": "1:15",
-          "dur": "15'",
+          "dur": "20'",
           "cat": "descanso",
           "title": "Descanso"
         },
         {
-          "time": "1:30",
-          "dur": "75'",
+          "time": "1:35",
+          "dur": "80'",
           "cat": "tool",
           "title": "7 · Clusters",
           "contenido": "Importar el export de Ahrefs en vivo, toggle crudo/normalizado y agrupación temática.",
@@ -182,8 +165,8 @@
           ]
         },
         {
-          "time": "2:45",
-          "dur": "60'",
+          "time": "2:55",
+          "dur": "70'",
           "cat": "tool",
           "title": "8 · Las 10 keywords",
           "contenido": "Selección y justificación del listado que exige el caso. Export.",
@@ -197,14 +180,8 @@
           ]
         },
         {
-          "time": "3:45",
-          "dur": "15'",
-          "cat": "descanso",
-          "title": "Descanso"
-        },
-        {
-          "time": "4:00",
-          "dur": "45'",
+          "time": "4:05",
+          "dur": "40'",
           "cat": "deck",
           "title": "9 · Atracción",
           "contenido": "Blog, social y territorio de marca. Copies, snippets y descriptivos.",
@@ -238,11 +215,11 @@
       "dia": "Día 3",
       "fecha": "Jueves 25/09",
       "franja": "5 h",
-      "lema": "Cómo lo capto",
+      "lema": "Cómo lo capto y dónde aterriza",
       "bloques": [
         {
           "time": "0:00",
-          "dur": "30'",
+          "dur": "25'",
           "cat": "framing",
           "title": "11 · Check-in",
           "contenido": "Proyectar dos o tres encargos y reabrirlos con import.",
@@ -260,8 +237,8 @@
           ]
         },
         {
-          "time": "0:30",
-          "dur": "60'",
+          "time": "0:25",
+          "dur": "50'",
           "cat": "deck",
           "title": "12 · PPC y mix",
           "contenido": "Google/Meta/TikTok, post promocionado, segmentación por contexto, influencers.",
@@ -275,8 +252,14 @@
           ]
         },
         {
-          "time": "1:30",
-          "dur": "60'",
+          "time": "1:15",
+          "dur": "20'",
+          "cat": "descanso",
+          "title": "Descanso"
+        },
+        {
+          "time": "1:35",
+          "dur": "55'",
           "cat": "tool",
           "title": "13 · Mix de captación",
           "contenido": "Repartir presupuesto y ver el funnel recalcularse. CPL resultante.",
@@ -291,13 +274,7 @@
         },
         {
           "time": "2:30",
-          "dur": "15'",
-          "cat": "descanso",
-          "title": "Descanso"
-        },
-        {
-          "time": "2:45",
-          "dur": "60'",
+          "dur": "50'",
           "cat": "tool",
           "title": "14 · Conversión",
           "contenido": "CTA → lead magnet → landing → formulario. Cadena completa.",
@@ -311,37 +288,32 @@
           ]
         },
         {
-          "time": "3:45",
-          "dur": "15'",
-          "cat": "descanso",
-          "title": "Descanso"
-        },
-        {
-          "time": "4:00",
-          "dur": "45'",
+          "time": "3:20",
+          "dur": "40'",
           "cat": "deck",
-          "title": "15 · Email y legal",
-          "contenido": "Formatos, welcome y transaccionales, opt-in doble, RGPD, entregabilidad.",
-          "block": "m3",
+          "title": "15 · Del plan al sitio web, con IA",
+          "contenido": "La web que pide el Anexo 1: árbol de contenidos, ficha de producto, formularios y checkout. Qué decide la IA y qué no.",
+          "block": "m4",
           "links": [
             {
-              "label": "Abrir M3",
-              "href": "decks/m3.html",
+              "label": "Abrir M4",
+              "href": "decks/m4.html",
               "kind": "deck"
             }
           ]
         },
         {
-          "time": "4:45",
-          "dur": "15'",
-          "cat": "kahoot",
-          "title": "16 · Cierre D3",
-          "contenido": "Kahoot 2 (atracción y conversión).",
+          "time": "4:00",
+          "dur": "60'",
+          "cat": "tool",
+          "title": "16 · Construir el sitio con IA",
+          "contenido": "Árbol de contenidos del site y brief completo para generarlo. Export del brief.",
+          "block": "m4",
           "links": [
             {
-              "label": "Kahoot 2",
-              "href": "tools/kahoot.html",
-              "kind": "kahoot"
+              "label": "Práctica: sitio web con IA",
+              "href": "tools/web-ia.html",
+              "kind": "tool"
             }
           ]
         }
@@ -356,10 +328,25 @@
       "bloques": [
         {
           "time": "0:00",
-          "dur": "60'",
+          "dur": "40'",
           "cat": "deck",
-          "title": "17 · Scoring y postventa",
-          "contenido": "Lead scoring continuo. De cliente a promotor, UGC y KPIs del funnel.",
+          "title": "17 · Email, legal y entregabilidad",
+          "contenido": "Formatos, welcome y transaccionales, opt-in doble, RGPD, hard/soft bounce.",
+          "block": "m3",
+          "links": [
+            {
+              "label": "Abrir M3",
+              "href": "decks/m3.html",
+              "kind": "deck"
+            }
+          ]
+        },
+        {
+          "time": "0:40",
+          "dur": "55'",
+          "cat": "tool",
+          "title": "18 · Lead scoring",
+          "contenido": "Scoring continuo: criterios, pesos y clasificación de los 12 leads del caso.",
           "block": "m3",
           "links": [
             {
@@ -375,11 +362,17 @@
           ]
         },
         {
-          "time": "1:00",
-          "dur": "60'",
+          "time": "1:35",
+          "dur": "20'",
+          "cat": "descanso",
+          "title": "Descanso"
+        },
+        {
+          "time": "1:55",
+          "dur": "55'",
           "cat": "tool",
-          "title": "18 · Nurturing",
-          "contenido": "Workflow de los 90 días posteriores al vuelo de vuelta.",
+          "title": "19 · Nurturing",
+          "contenido": "Workflow de los 90 días posteriores al vuelo de vuelta. De cliente a promotor y KPIs.",
           "block": "m3",
           "links": [
             {
@@ -390,16 +383,10 @@
           ]
         },
         {
-          "time": "2:00",
-          "dur": "15'",
-          "cat": "descanso",
-          "title": "Descanso"
-        },
-        {
-          "time": "2:15",
-          "dur": "45'",
+          "time": "2:50",
+          "dur": "40'",
           "cat": "tool",
-          "title": "19 · Calendario",
+          "title": "20 · Calendario",
           "contenido": "Calendario anual y cronograma por plataforma, con las dos estacionalidades.",
           "block": "m3",
           "links": [
@@ -411,10 +398,10 @@
           ]
         },
         {
-          "time": "3:00",
-          "dur": "30'",
+          "time": "3:30",
+          "dur": "25'",
           "cat": "tool",
-          "title": "20 · Creatividades",
+          "title": "21 · Creatividades",
           "contenido": "Briefs de las 5 piezas que pide el caso.",
           "block": "m3",
           "links": [
@@ -426,22 +413,8 @@
           ]
         },
         {
-          "time": "3:30",
-          "dur": "15'",
-          "cat": "kahoot",
-          "title": "21 · Kahoot 3",
-          "contenido": "Nurturing, email y medición.",
-          "links": [
-            {
-              "label": "Kahoot 3",
-              "href": "tools/kahoot.html",
-              "kind": "kahoot"
-            }
-          ]
-        },
-        {
-          "time": "3:45",
-          "dur": "60'",
+          "time": "3:55",
+          "dur": "55'",
           "cat": "pitch",
           "title": "22 · Pitch",
           "contenido": "5 equipos, 5 mandatos, Comité de Dirección puntuando.",
@@ -454,8 +427,8 @@
           ]
         },
         {
-          "time": "4:45",
-          "dur": "15'",
+          "time": "4:50",
+          "dur": "10'",
           "cat": "framing",
           "title": "23 · Cierre",
           "contenido": "Qué se llevan y qué les falta para el entregable."

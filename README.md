@@ -8,9 +8,8 @@ España como instrumento de promoción de los alimentos y bebidas españoles"*.
 > 82,8 millones de turistas prueban nuestros productos en España.
 > Casi ninguno los vuelve a comprar al aterrizar en casa.
 
-Incluye teoría en **RevealJS**, cinco herramientas interactivas que dejan al alumno
-un output pegable en su entregable, una **sala de pitch** con temporizador y scoring,
-y enlaces a los tres **Kahoots**.
+Incluye teoría en **RevealJS**, seis herramientas interactivas que dejan al alumno
+un output pegable en su entregable y una **sala de pitch** con temporizador y scoring.
 
 ## Stack
 
@@ -66,14 +65,15 @@ decks/
   m1.html                     El buyer persona en la digitalización
   m2.html                     Atracción y conversión
   m3.html                     Nurturing, automatización y postventa
+  m4.html                     Del plan al sitio web, con IA
 tools/
   buyer-persona.html          2 arquetipos + matriz de momentos 3×3
   keywords.html               Importador de Ahrefs, clusters y las 10 keywords
   funnel.html                 Mix de captación + cadena de conversión
+  web-ia.html                 Árbol de contenidos del site + brief para la IA
   nurturing.html              Lead scoring + workflow de los 90 días
   calendario.html             Calendario anual + 5 briefs de creatividad
   pitch.html                  Sala de pitch: mandatos, cronómetro y ranking
-  kahoot.html                 Enlaces a los tres Kahoots
   _styleguide.html            Guía de estilo (no enlazada en la navegación)
 src/
   components/                 Header, Section, Card, Kpi, Button, Badge, Chip,
@@ -112,6 +112,26 @@ Los cinco puntos del bloque online del caso, uno por herramienta:
 4. **Calendario anual y cronograma** → `tools/calendario.html`
 5. **5 creatividades** → `tools/calendario.html#briefs`
 
+Y, como puente al tercer bloque de la asignatura:
+
+6. **El sitio web del Anexo 1** → `tools/web-ia.html` — árbol de contenidos, ficha de
+   producto, formularios y checkout, con el brief listo para construirlo con IA. La
+   estrategia de distribución y la logística que lo rodean son del tercer bloque.
+
+## La IA en el aula
+
+Dos usos, y ninguno es escribir prompts:
+
+- **Como asistente** (M1–M3): cada herramienta tiene un botón que copia al portapapeles
+  un prompt ya compuesto con lo que el alumno acaba de rellenar. Un clic, sin campos de
+  texto ni explicaciones de prompting.
+- **Como constructora** (M4): la herramienta del sitio web compone un brief completo
+  —contexto, árbol de contenidos, restricciones y criterio de aceptación— para generar
+  la web con la plataforma que elijan (Wix, v0, Lovable, la que sea).
+
+**Ninguna herramienta llama a una API.** Todo es local y offline: los botones copian
+texto, no envían nada.
+
 ## Sobre las cifras
 
 Todos los datos del caso proceden del **dossier del enunciado (2018)** y se muestran
@@ -144,16 +164,16 @@ referencia, rúbrica de scoring del pitch) se gestiona **fuera de este repositor
 
 Busca `TODO:` en `src/data/contenido.js`:
 
-1. **URL y PIN de los tres Kahoots** (también se pueden pegar en vivo desde
-   `tools/kahoot.html`).
-2. **Texto de presentación del profesor** (slide 2 del deck de apertura).
-3. **Instrucción concreta de entrega** del encargo entre sesiones.
+1. **Texto de presentación del profesor** (slide 2 del deck de apertura).
+2. **Instrucción concreta de entrega** del encargo entre sesiones.
 
 Y, fuera del código:
 
-4. **Export de Ahrefs.** El importador de `tools/keywords.html` se prueba con un
+3. **Export de Ahrefs.** El importador de `tools/keywords.html` se prueba con un
    export real *antes* del día 2: es el único punto del taller que depende de un
    archivo externo. Conviene llevar un CSV de reserva en un USB.
+4. **Cuenta de la plataforma de IA** que se vaya a usar el día 3 para construir la web,
+   probada antes de clase con el brief que genera la herramienta.
 5. **Documento confidencial de profesor**, fuera del repo.
 
 ## Accesibilidad

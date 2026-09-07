@@ -26,7 +26,7 @@ function minutos(dur) {
   return m ? Number(m[1]) : 0;
 }
 
-/** Un enlace de acción (deck / tool / kahoot / pitch). */
+/** Un enlace de acción (deck / tool / pitch / framing). */
 function linkHtml({ label, href, kind }) {
   return `<a class="agenda-link agenda-link--${escapeHtml(kind)}" href="${escapeHtml(href)}">${escapeHtml(label)}</a>`;
 }

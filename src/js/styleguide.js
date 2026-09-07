@@ -19,6 +19,7 @@ const TOKENS_COLOR = [
   ["--c-m1", "Módulo M1"],
   ["--c-m2", "Módulo M2"],
   ["--c-m3", "Módulo M3"],
+  ["--c-m4", "Módulo M4"],
   ["--c-tofu", "Fase TOFU"],
   ["--c-mofu", "Fase MOFU"],
   ["--c-bofu", "Fase BOFU"],
@@ -43,6 +44,7 @@ const demo = () => `
     ${Badge({ block: "m1" })}
     ${Badge({ block: "m2" })}
     ${Badge({ block: "m3" })}
+    ${Badge({ block: "m4" })}
     <span class="fase fase--tofu">TOFU</span>
     <span class="fase fase--mofu">MOFU</span>
     <span class="fase fase--bofu">BOFU</span>

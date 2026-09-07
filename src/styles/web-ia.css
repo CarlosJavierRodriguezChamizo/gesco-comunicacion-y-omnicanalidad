@@ -1,0 +1,80 @@
+/* =========================================================================
+   web-ia.css — Árbol de contenidos del site, cobertura del Anexo 1
+   y brief para construirlo con IA.
+   ========================================================================= */
+
+/* ------------------------------------------------------------ Secciones */
+.arbol { display: grid; gap: var(--sp-4); }
+
+.seccion {
+  border: 1px solid var(--c-line); border-left: 5px solid var(--c-m4);
+  border-radius: var(--radius); background: #fff; padding: var(--sp-4) var(--sp-5);
+}
+.seccion__head { display: flex; flex-wrap: wrap; gap: var(--sp-3); align-items: center; }
+.seccion__nombre {
+  flex: 1 1 14em; border: none; border-bottom: 2px solid var(--c-line);
+  font-family: var(--font-display); font-size: 1.35rem; color: var(--c-ink);
+  padding: .1em 0; background: transparent;
+}
+.seccion__nombre:focus-visible { outline: none; border-bottom-color: var(--c-accent-blue); }
+.seccion__n { font-size: .74rem; color: var(--c-ink-soft); font-weight: 600; white-space: nowrap; }
+.seccion__acciones { display: flex; gap: var(--sp-2); }
+
+/* Páginas hijas */
+.paginas { display: grid; gap: var(--sp-2); margin-top: var(--sp-3); }
+.pagina {
+  display: grid; gap: var(--sp-2); align-items: center;
+  grid-template-columns: 1.5fr 1fr 1fr .8fr auto;
+  border: 1px solid var(--c-line); border-radius: var(--radius-sm);
+  padding: .4em .6em; background: var(--c-surface);
+}
+@media (max-width: 900px) { .pagina { grid-template-columns: 1fr 1fr; } }
+.pagina input[type="text"], .pagina select {
+  width: 100%; padding: .3em .45em; font-size: .84rem;
+  border: 1px solid var(--c-line); border-radius: 6px; background: #fff;
+}
+.pagina button {
+  border: none; background: transparent; cursor: pointer;
+  color: var(--c-ink-soft); font-size: 1.05rem; line-height: 1;
+}
+.pagina button:hover { color: #b3261e; }
+.pagina__vacia { grid-column: 1 / -1; font-size: .84rem; color: var(--c-ink-soft); font-style: italic; }
+
+/* ----------------------------------------------- Cobertura del Anexo 1 */
+.anexo { display: grid; gap: var(--sp-2); }
+.anexo-item {
+  display: grid; grid-template-columns: 1.6em 1fr auto; gap: var(--sp-3);
+  align-items: baseline; font-size: .9rem;
+  padding: .35em 0; border-bottom: 1px solid var(--c-line);
+}
+.anexo-item__marca { font-weight: 700; color: var(--c-ink-soft); text-align: center; }
+.anexo-item[data-ok="si"] .anexo-item__marca { color: var(--c-m2-dark); }
+.anexo-item[data-ok="si"] .anexo-item__txt { color: var(--c-ink-soft); }
+.anexo-item__donde { font-size: .78rem; color: var(--c-m2-dark); font-weight: 600; }
+.anexo-item[data-ok="no"] .anexo-item__donde { color: var(--c-ink-soft); font-weight: 400; }
+
+/* ------------------------------------------------------------- Brief */
+.brief-web { display: grid; gap: var(--sp-4); }
+@media (min-width: 800px) { .brief-web { grid-template-columns: 1fr 1fr; } }
+.brief-web .field--ancho { grid-column: 1 / -1; }
+
+.brief-previo {
+  border: 1px solid var(--c-line); border-radius: var(--radius);
+  background: var(--c-ink); color: #fff; padding: var(--sp-5);
+  margin-top: var(--sp-5);
+}
+.brief-previo h3 { color: #fff; font-size: 1.2rem; margin: 0 0 var(--sp-3); }
+.brief-previo pre {
+  margin: 0; max-height: 380px; overflow: auto;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: .76rem; line-height: 1.5; color: var(--c-white-soft);
+  white-space: pre-wrap; word-break: break-word;
+}
+
+/* ------------------------------------------- Payoff: el árbol dibujado */
+.arbol-svg { width: 100%; height: auto; display: block; }
+.arbol-svg text { font-family: var(--font-body); }
+.arbol-svg .nodo-t { font-family: var(--font-display); }
+.arbol-leyenda { display: flex; flex-wrap: wrap; gap: var(--sp-4); margin-top: var(--sp-4); }
+.arbol-leyenda span { display: inline-flex; align-items: center; gap: .5em; font-size: .88rem; color: var(--c-white-soft); }
+.arbol-leyenda i { width: 16px; height: 16px; border-radius: 4px; display: inline-block; }

@@ -23,14 +23,15 @@ export default defineConfig({
         m1: r('decks/m1.html'),
         m2: r('decks/m2.html'),
         m3: r('decks/m3.html'),
+        m4: r('decks/m4.html'),
         // Herramientas interactivas (prácticas del taller)
         buyerPersona: r('tools/buyer-persona.html'),
         keywords: r('tools/keywords.html'),
         funnel: r('tools/funnel.html'),
         nurturing: r('tools/nurturing.html'),
         calendario: r('tools/calendario.html'),
+        webIa: r('tools/web-ia.html'),
         pitch: r('tools/pitch.html'),
-        kahoot: r('tools/kahoot.html'),
         // Guía de estilo (no enlazada en la navegación)
         styleguide: r('tools/_styleguide.html'),
       },

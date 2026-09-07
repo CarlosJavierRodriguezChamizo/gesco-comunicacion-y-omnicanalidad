@@ -31,14 +31,19 @@
   --c-white-soft: rgba(255, 255, 255, .74);  /* texto secundario sobre azul */
   --c-surface: #f4f6fb;                      /* superficie gris muy clara */
 
-  /* --- Color por módulo (M1 azul · M2 turquesa · M3 navy) --- */
+  /* --- Color por módulo (M1 azul · M2 turquesa · M3 navy · M4 magenta) ---
+     M4 no está en la paleta corporativa de partida: se añade porque el bloque
+     creció a cuatro módulos y hacía falta un cuarto color que no chocara con
+     los tres anteriores ni con los del funnel (TOFU/MOFU/BOFU). */
   --c-m1: #0047e9;
   --c-m2: #0ae4c3;
   --c-m3: #00133f;
+  --c-m4: #c01d6a;
   /* Texto legible sobre cada color de módulo (contraste AA) */
   --c-m1-fg: #ffffff;
   --c-m2-fg: #00133f;   /* turquesa es claro: el texto va en ink */
   --c-m3-fg: #ffffff;
+  --c-m4-fg: #ffffff;
   /* Variante oscura del turquesa, para texto turquesa sobre blanco (AA) */
   --c-m2-dark: #08746a;
 

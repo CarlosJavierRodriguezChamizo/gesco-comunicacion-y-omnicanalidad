@@ -83,8 +83,6 @@
 .agenda-link--deck:hover    { background: var(--c-m1); color: #fff; }
 .agenda-link--tool    { border-color: var(--c-m2-dark); color: var(--c-m2-dark); }
 .agenda-link--tool:hover    { background: var(--c-m2-dark); color: #fff; }
-.agenda-link--kahoot  { border-color: #b26a00; color: #b26a00; }
-.agenda-link--kahoot:hover  { background: #b26a00; color: #fff; }
 .agenda-link--pitch   { border-color: var(--c-ink); color: var(--c-ink); }
 .agenda-link--pitch:hover   { background: var(--c-ink); color: #fff; }
 .agenda-link--framing { border-color: var(--c-ink-soft); color: var(--c-ink-soft); }
@@ -101,7 +99,6 @@
    que reutiliza estas clases solo para el color del borde izquierdo. */
 .cat.cat--deck    { background: var(--c-m1); }
 .cat.cat--tool    { background: var(--c-m2-dark); }
-.cat.cat--kahoot  { background: #b26a00; }
 .cat.cat--pitch   { background: var(--c-ink); }
 .cat.cat--framing { background: #4a5a7d; }
 .cat.cat--rest    { background: #6b7280; }
@@ -110,7 +107,6 @@
    Va ANTES de las reglas de [data-status] para que el estado tenga prioridad. */
 .agenda-item.cat--deck    { border-left-color: var(--c-m1); }
 .agenda-item.cat--tool    { border-left-color: var(--c-m2-dark); }
-.agenda-item.cat--kahoot  { border-left-color: #b26a00; }
 .agenda-item.cat--pitch   { border-left-color: var(--c-ink); }
 .agenda-item.cat--framing { border-left-color: #4a5a7d; }
 .agenda-item.cat--rest    { border-left-color: #6b7280; }

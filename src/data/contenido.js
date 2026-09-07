@@ -3,8 +3,7 @@
 
    IMPORTANTE (regla pedagógica): este archivo es material de ALUMNO.
    No contiene soluciones, ni respuestas correctas, ni rúbricas, ni catálogo
-   de errores. Los mandatos de pitch son el ENCARGO de cada equipo; los
-   Kahoots se juegan en la plataforma Kahoot!, aquí solo van título y enlace.
+   de errores. Los mandatos de pitch son el ENCARGO de cada equipo.
 
    ► PLACEHOLDERS que cierra el profesor antes de clase: busca "TODO:".
    ========================================================================= */
@@ -29,7 +28,7 @@ export const REGLAS = [
   { titulo: "20 horas, cuatro sesiones", texto: "11 y 12 de septiembre, y 25 y 26 de septiembre. Cinco horas cada día." },
   { titulo: "Esto es un taller", texto: "Cada bloque de 60' son 15' de teoría, 15' de aplicación al caso y 30' de trabajo vuestro." },
   { titulo: "Todo se construye en clase", texto: "Cada herramienta deja un output exportable que se pega directamente en el entregable." },
-  { titulo: "La IA es parte del proceso", texto: "No es una demo ni un ejercicio de prompts: los botones copian el prompt ya construido con lo que acabáis de rellenar." },
+  { titulo: "La IA es parte del proceso", texto: "No es una demo ni un ejercicio de prompts: los botones copian el prompt ya construido con lo que acabáis de rellenar. Y el último día construye vuestro sitio web." },
   { titulo: "Lo que no se exporta, se pierde", texto: "El estado vive en memoria, sin servidor. Exportad antes de cerrar el navegador." },
 ];
 
@@ -52,38 +51,7 @@ export const ENCARGO = {
 };
 
 /* -------------------------------------------------------------------------
-   4 · Kahoots (3). URL y PIN se pegan en vivo desde la propia página.
-   Las preguntas y respuestas viven en Kahoot!, nunca en este repositorio.
-   ------------------------------------------------------------------------- */
-export const KAHOOTS = [
-  {
-    id: "k1",
-    momento: "Día 1 · cierre",
-    titulo: "Kahoot 1 · Buyer persona e inbound",
-    valida: "Conceptos: crossumer, Customer Insight frente a USP, outbound / inbound / allbound, TOFU-MOFU-BOFU. No pregunta cifras del dataset.",
-    url: "", // TODO: URL de la partida
-    pin: "", // TODO: PIN de la partida
-  },
-  {
-    id: "k2",
-    momento: "Día 3 · cierre",
-    titulo: "Kahoot 2 · Atracción y conversión",
-    valida: "Conceptos: cluster temático e intención de búsqueda, descriptivos, PPC y post promocionado, CTA → lead magnet → landing → formulario.",
-    url: "", // TODO: URL de la partida
-    pin: "", // TODO: PIN de la partida
-  },
-  {
-    id: "k3",
-    momento: "Día 4 · antes del pitch",
-    titulo: "Kahoot 3 · Nurturing, email y medición",
-    valida: "Conceptos: lead scoring continuo, workflows, formatos de email, opt-in doble y RGPD, hard/soft bounce, KPIs del funnel.",
-    url: "", // TODO: URL de la partida
-    pin: "", // TODO: PIN de la partida
-  },
-];
-
-/* -------------------------------------------------------------------------
-   5 · Mandatos del pitch (5). Formato jigsaw: cada equipo defiende una pieza
+   4 · Mandatos del pitch (5). Formato jigsaw: cada equipo defiende una pieza
    distinta para que los pitches no se repitan. Son el ENCARGO, no la solución.
    ------------------------------------------------------------------------- */
 export const MANDATOS = [
@@ -108,6 +76,7 @@ export const MANDATOS = [
       "Qué lead magnet ofrecéis y por qué querría guardarlo en el móvil",
       "Titular, promesa y campos del formulario (obligatorios y opcionales)",
       "Dónde y cuándo aparece el CTA dentro del viaje",
+      "En qué página del sitio aterriza y qué hay alrededor",
     ],
     prep: { label: "Cadena de conversión", href: "funnel.html#conversion" },
   },
@@ -163,7 +132,7 @@ export const PITCH_CRITERIOS = [
 ];
 
 /* -------------------------------------------------------------------------
-   6 · Los cuatro criterios de evaluación ESIC del caso, con sus pesos.
+   5 · Los cuatro criterios de evaluación ESIC del caso, con sus pesos.
    Del enunciado del caso (resumen de la Guía Académica, págs. 14-16).
    ------------------------------------------------------------------------- */
 export const CRITERIOS_ESIC = [
@@ -174,7 +143,7 @@ export const CRITERIOS_ESIC = [
 ];
 
 /* -------------------------------------------------------------------------
-   7 · Qué entregable sale de este bloque (bloque online del caso).
+   6 · Qué entregable sale de este bloque (bloque online del caso).
    ------------------------------------------------------------------------- */
 export const ENTREGABLES = [
   { id: "personas", titulo: "2 buyer personas", texto: "El perfil de dos arquetipos de los targets elegidos.", tool: "tools/buyer-persona.html" },
@@ -182,10 +151,17 @@ export const ENTREGABLES = [
   { id: "acciones", titulo: "Plan de acciones online", texto: "Todas las acciones para generar tráfico y captar el mayor número de leads válidos.", tool: "tools/funnel.html" },
   { id: "calendario", titulo: "Calendario y cronograma", texto: "Calendario anual y cronograma de contenidos para las plataformas, web y redes elegidas.", tool: "tools/calendario.html" },
   { id: "creatividades", titulo: "5 creatividades", texto: "Cinco ejemplos finales: redes sociales, Ads, banners o cualquier otro formato online.", tool: "tools/calendario.html#briefs" },
+  { id: "web", titulo: "El sitio web", texto: "Árbol de contenidos, ficha de producto, formularios y checkout: la web ficticia del Anexo 1, construida con IA. Es el puente al tercer bloque de la asignatura.", tool: "tools/web-ia.html", puente: true },
 ];
 
 /** Lo que este bloque NO cubre (lo ven en los otros dos bloques de la asignatura). */
 export const FUERA_DE_ALCANCE = [
   "Estrategia de comunicación y medios offline: relaciones públicas, publicidad y promoción con el turista ya en España.",
-  "Multicanalidad y omnicanalidad: estrategia de distribución, e-commerce, marketplace y logística de envío.",
+  "Multicanalidad y omnicanalidad: estrategia de distribución selectiva o intensiva, canales B2B y B2C, marketplace y logística de envío.",
 ];
+
+/** Lo que este bloque sí toca del tercero: construimos la web del Anexo 1,
+    porque es donde aterriza todo el plan inbound. La estrategia de
+    distribución y la logística que la rodean se ven en el otro bloque. */
+export const PUENTE_TERCER_BLOQUE =
+  "El Anexo 1 del caso pide una web ficticia del producto. La construimos aquí, con IA, porque es donde aterriza el plan de captación: la landing, el formulario y la ficha de producto son páginas de ese sitio. La estrategia de distribución y la logística que lo rodean son del tercer bloque.";
