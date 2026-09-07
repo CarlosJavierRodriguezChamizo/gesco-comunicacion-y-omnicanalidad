@@ -1,0 +1,14 @@
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["./deck--7jWn1uh.js","./deck-Bcjp_U-S.css"])))=>i.map(i=>d[i]);
+import"./modulepreload-polyfill-P2Xu9kJm.js";import{o as e}from"./_util-P6weWh_n.js";import{c as t,i as n,l as r,r as i,t as a,u as o}from"./contenido-fo8BtRp9.js";var s=`modulepreload`,c=function(e,t){return new URL(e,t).href},l={},u=function(e,t,n){let r=Promise.resolve();if(t&&t.length>0){let e=document.getElementsByTagName(`link`),i=document.querySelector(`meta[property=csp-nonce]`),a=i?.nonce||i?.getAttribute(`nonce`);function o(e){return Promise.all(e.map(e=>Promise.resolve(e).then(e=>({status:`fulfilled`,value:e}),e=>({status:`rejected`,reason:e}))))}function u(e){return import.meta.resolve?import.meta.resolve(e):new URL(e,import.meta.url).href}r=o(t.map(t=>{if(t=c(t,n),t=u(t),t in l)return;l[t]=!0;let r=t.endsWith(`.css`);for(let n=e.length-1;n>=0;n--){let i=e[n];if(i.href===t&&(!r||i.rel===`stylesheet`))return}let i=document.createElement(`link`);if(i.rel=r?`stylesheet`:s,r||(i.as=`script`),i.crossOrigin=``,i.href=t,a&&i.setAttribute(`nonce`,a),document.head.appendChild(i),r)return new Promise((e,n)=>{i.addEventListener(`load`,e),i.addEventListener(`error`,()=>n(Error(`Unable to preload CSS for ${t}`)))})}))}function i(e){let t=new Event(`vite:preloadError`,{cancelable:!0});if(t.payload=e,window.dispatchEvent(t),!t.defaultPrevented)throw e}return r.then(t=>{for(let e of t||[])e.status===`rejected`&&i(e.reason);return e().catch(i)})};function d(e,t){let n=document.querySelector(`[data-slot="${e}"]`);n&&(n.innerHTML=t)}d(`prof-nombre`,e(t.nombre)),d(`prof-titular`,e(t.titular)),d(`prof-bio`,t.bio.map(t=>`<p style="font-size:.7em">${e(t)}</p>`).join(``)),d(`prof-contacto`,e(t.contacto)),d(`reglas`,o.map((t,n)=>`<div class="feat${n===o.length-1?` feat--accent`:``}">
+      <span class="feat__n">0${n+1}</span>
+      <h3>${e(t.titulo)}</h3>
+      <p>${e(t.texto)}</p>
+    </div>`).join(``)),d(`fuera`,n.map((t,n)=>{let[r,i]=t.split(`:`);return`<div class="ccard"><h3>Bloque ${n===0?`1`:`3`} · ${e(r)}</h3><p>${e((i||``).trim())}</p></div>`}).join(``)),d(`puente`,e(r)),d(`entregables`,i.map((t,n)=>`<div class="feat${t.puente?` feat--accent`:``}">
+      <span class="feat__n">0${n+1}</span>
+      <h3>${e(t.titulo)}</h3>
+      <p>${e(t.texto)}</p>
+    </div>`).join(``)),d(`criterios`,a.map(t=>`<div class="crit__row">
+      <span class="crit__peso">${t.peso}%</span>
+      <span class="crit__bar" aria-hidden="true"><i style="width:${t.peso*2.2}%"></i></span>
+      <span class="crit__txt"><strong>${e(t.titulo)}</strong><br><small>${e(t.texto)}</small></span>
+    </div>`).join(``)),u(()=>import(`./deck--7jWn1uh.js`).then(e=>e.t),__vite__mapDeps([0,1]),import.meta.url);
