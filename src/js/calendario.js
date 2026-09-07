@@ -9,7 +9,7 @@
    ========================================================================= */
 import {
   Header, Section, AskAIButton, wireAskAI,
-  RevealMoment, updateRevealMoment, createStatePanel, escapeHtml,
+  RevealMoment, updateRevealMoment, createStatePanel, escapeHtml, appUrl,
 } from "../components/index.js";
 import CASO from "../data/caso-alimentos.json";
 
@@ -420,7 +420,7 @@ app.innerHTML = [
   Section({
     variant: "light", wide: true,
     html: `<div data-statepanel></div>
-      <p class="tool-footer">Y ahora, a defenderlo: <a href="/tools/pitch.html">sala de pitch</a>.</p>`,
+      <p class="tool-footer">Y ahora, a defenderlo: <a href="${appUrl("/tools/pitch.html")}">sala de pitch</a>.</p>`,
   }),
 ].join("");
 

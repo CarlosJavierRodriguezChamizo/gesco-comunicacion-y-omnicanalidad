@@ -11,7 +11,7 @@
    ========================================================================= */
 import {
   Header, Section, Button, AskAIButton, wireAskAI,
-  RevealMoment, updateRevealMoment, createStatePanel, escapeHtml,
+  RevealMoment, updateRevealMoment, createStatePanel, escapeHtml, appUrl,
 } from "../components/index.js";
 import CASO from "../data/caso-alimentos.json";
 
@@ -359,7 +359,7 @@ app.innerHTML = [
   Section({
     variant: "light", wide: true,
     html: `<div data-statepanel></div>
-      <p class="tool-footer">Siguiente pieza del entregable: <a href="/tools/keywords.html">las 10 keywords</a>.</p>`,
+      <p class="tool-footer">Siguiente pieza del entregable: <a href="${appUrl("/tools/keywords.html")}">las 10 keywords</a>.</p>`,
   }),
 ].join("");
 

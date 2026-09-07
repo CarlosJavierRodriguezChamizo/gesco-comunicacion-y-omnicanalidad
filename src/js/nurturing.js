@@ -8,7 +8,7 @@
    ========================================================================= */
 import {
   Header, Section, AskAIButton, wireAskAI,
-  RevealMoment, updateRevealMoment, createStatePanel, escapeHtml, num, descargar,
+  RevealMoment, updateRevealMoment, createStatePanel, escapeHtml, num, descargar, appUrl,
 } from "../components/index.js";
 import CASO from "../data/caso-alimentos.json";
 
@@ -509,7 +509,7 @@ app.innerHTML = [
   Section({
     variant: "light", wide: true,
     html: `<div data-statepanel></div>
-      <p class="tool-footer">Siguiente pieza: <a href="/tools/calendario.html">calendario y creatividades</a>.</p>`,
+      <p class="tool-footer">Siguiente pieza: <a href="${appUrl("/tools/calendario.html")}">calendario y creatividades</a>.</p>`,
   }),
 ].join("");
 

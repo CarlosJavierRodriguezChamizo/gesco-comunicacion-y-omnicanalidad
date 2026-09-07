@@ -5,7 +5,8 @@
    Las preguntas y las respuestas viven en la plataforma Kahoot!, nunca aquí:
    este proyecto es material de alumno y no puede contener soluciones.
    ========================================================================= */
-import { Header, Section, escapeHtml } from "../components/index.js";
+import { Header, Section, escapeHtml, appUrl,
+} from "../components/index.js";
 import { KAHOOTS } from "../data/contenido.js";
 
 function cardHtml(k) {
@@ -51,7 +52,7 @@ app.innerHTML = [
   }),
   Section({
     variant: "light", wide: true,
-    html: `<p class="tool-footer">Vuelta a la <a href="/index.html">escaleta</a>.</p>`,
+    html: `<p class="tool-footer">Vuelta a la <a href="${appUrl("/index.html")}">escaleta</a>.</p>`,
   }),
 ].join("");
 

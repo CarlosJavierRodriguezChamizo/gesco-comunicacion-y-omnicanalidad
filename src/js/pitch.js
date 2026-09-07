@@ -10,7 +10,7 @@
    Todo el estado vive en memoria.
    ========================================================================= */
 import {
-  Header, Section, RevealMoment, updateRevealMoment, escapeHtml, num, descargar,
+  Header, Section, RevealMoment, updateRevealMoment, escapeHtml, num, descargar, appUrl,
 } from "../components/index.js";
 import { MANDATOS, PITCH_RECORDATORIO, PITCH_CRITERIOS } from "../data/contenido.js";
 
@@ -218,7 +218,7 @@ app.innerHTML = [
 
   Section({
     variant: "light", wide: true,
-    html: `<p class="tool-footer">Vuelta a la <a href="/index.html">escaleta</a>.</p>`,
+    html: `<p class="tool-footer">Vuelta a la <a href="${appUrl("/index.html")}">escaleta</a>.</p>`,
   }),
 ].join("");
 
