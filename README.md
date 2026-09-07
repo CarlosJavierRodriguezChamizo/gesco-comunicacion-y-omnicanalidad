@@ -51,8 +51,10 @@ abriendo los HTML en local.
 
 Sitio estático en `/dist`.
 
-- **GitHub Pages**: `.github/workflows/deploy.yml` construye y publica en cada push
-  a `main`. En el repositorio, *Settings → Pages → Source: GitHub Actions*.
+- **GitHub Pages**: `.github/workflows/deploy.yml` construye con Vite y publica
+  `/dist` en la rama `gh-pages` en cada push a `main`. Ajuste inicial, una sola vez:
+  *Settings → Pages → Build and deployment → Source: Deploy from a branch →
+  Branch: `gh-pages` / `(root)`*. A partir de ahí el sitio se actualiza solo.
 - **Vercel / Netlify**: framework *Vite*, build `npm run build`, output `dist`.
 
 ## Estructura
